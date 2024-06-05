@@ -7,6 +7,11 @@ html {
   font-size: 62.5%;
   font-family: "Manrope", sans-serif;
 }
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 $color-primary: #d87d4a;
 $color-dark: #191919;
 $color-light-gray: #f1f1f1;
