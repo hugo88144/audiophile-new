@@ -10,7 +10,7 @@ function HeaderContent() {
         for the passionate music enthusiast.
       </p>
 
-      <BtnSee />
+      <BtnSee className="content__btn-see" />
     </div>
   );
 }

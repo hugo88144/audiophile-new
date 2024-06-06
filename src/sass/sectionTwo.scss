@@ -9,13 +9,16 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     justify-content: center;
     height: 56rem;
     border-radius: 1rem;
     background-color: $color-primary;
     position: relative;
     overflow: hidden;
+    padding: 0 20% 0 55%;
+    gap: 3rem;
+    z-index: -2;
 
     &-img {
       max-width: 35%;
@@ -28,7 +31,7 @@
   }
 
   &__btn {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.5rem;
     color: $color-white;
     background-color: $color-black;
@@ -41,15 +44,40 @@
   &__title {
     color: $color-white;
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 5rem;
     text-transform: uppercase;
     line-height: 6rem;
   }
 
   &__description {
-    color: $color-white;
+    color: #f5ded2;
     font-weight: 500;
     font-size: 2rem;
     line-height: 2.5rem;
+  }
+
+  &__rings {
+    position: absolute;
+    top: -10px;
+    right: 360px;
+    max-width: 90%;
+    z-index: -1;
+  }
+}
+
+.sectionTwo {
+  &__box-2 {
+  }
+  &__img-2 {
+  }
+  &__btn-2 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: $color-black;
+    background-color: transparent;
+    border: 1px solid $color-black;
+    width: 16rem;
+    height: 5rem;
+    text-transform: uppercase;
   }
 }

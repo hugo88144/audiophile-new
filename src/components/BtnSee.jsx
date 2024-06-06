@@ -1,5 +1,6 @@
-function BtnSee() {
-  return <button className="content__btn-see"> See product </button>;
+// eslint-disable-next-line react/prop-types
+function BtnSee({ className }) {
+  return <button className={className}> See product </button>;
 }
 
 export default BtnSee;
