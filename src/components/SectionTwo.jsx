@@ -1,6 +1,7 @@
 import sectionTwoImg from "../assets/home/desktop/image-speaker-zx9.png";
 import rings from "../assets/home/desktop/pattern-circles.svg";
 import sectionTwoImg2 from "../assets/home/desktop/image-speaker-zx7.jpg";
+import sectionTwoImg3 from "../assets/home/desktop/image-earphones-yx1.jpg";
 import BtnSee from "./BtnSee";
 function SectionTwo() {
   return (
@@ -23,8 +24,11 @@ function SectionTwo() {
         <BtnSee className="sectionTwo__btn-2" />
       </div>
 
-      <div className="sectionTwo__container">
-        <div className="sectionTwo__img-3"></div>
+      <div className="sectionTwo__box-3">
+        <div className="sectionTwo__imgbox">
+          <img src={sectionTwoImg3} className="sectionTwo__imgbox-4" />
+        </div>
+
         <div className="sectionTwo__box-4">
           <div className="sectionTwo__title-3">YX1 EARPHONES</div>
           <BtnSee className="sectionTwo__btn-2" />
