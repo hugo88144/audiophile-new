@@ -1,0 +1,55 @@
+.sectionTwo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 0rem 20% 15rem 20%;
+  &__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    height: 56rem;
+    border-radius: 1rem;
+    background-color: $color-primary;
+    position: relative;
+    overflow: hidden;
+
+    &-img {
+      max-width: 35%;
+      height: auto;
+
+      position: absolute;
+      top: 90px;
+      left: 10%;
+    }
+  }
+
+  &__btn {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: $color-white;
+    background-color: $color-black;
+    border: none;
+    width: 16rem;
+    height: 5rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    color: $color-white;
+    font-weight: 600;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 6rem;
+  }
+
+  &__description {
+    color: $color-white;
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+}

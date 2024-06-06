@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   color: $color-white;
-  max-width: 30rem;
+  max-width: 35rem;
   gap: 3rem;
 
   &__new {
@@ -56,7 +56,7 @@
 
   &__title {
     font-weight: 600;
-    font-size: 4rem;
+    font-size: 5rem;
     text-transform: uppercase;
     line-height: 6rem;
   }
@@ -74,7 +74,7 @@
     color: $color-white;
     background-color: $color-primary;
     border: none;
-    width: 20rem;
+    width: 16rem;
     height: 5rem;
     text-transform: uppercase;
   }

@@ -1,3 +1,5 @@
+import BtnSee from "./BtnSee";
+
 function HeaderContent() {
   return (
     <div className="content">
@@ -7,7 +9,8 @@ function HeaderContent() {
         Experience natural, lifelike audio and exceptional build quality made
         for the passionate music enthusiast.
       </p>
-      <button className="content__btn-see"> See product </button>
+
+      <BtnSee />
     </div>
   );
 }
