@@ -3,6 +3,7 @@ import HeaderContent from "./components/HeaderContent";
 import SectionOne from "./pages/SectionOne";
 import AudioPoducts from "./components/AuidoPoducts";
 import SectionTwo from "./components/SectionTwo";
+import ProductCard from "./components/ProductCard";
 import "./sass/main.scss";
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       </SectionOne>
       <AudioPoducts />
       <SectionTwo />
+      <ProductCard />
+      <Footer />
     </div>
   );
 }

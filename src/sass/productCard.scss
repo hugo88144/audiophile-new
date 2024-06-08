@@ -1,0 +1,41 @@
+.productCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  width: 111rem;
+  height: 58rem;
+  margin: 2rem 0rem 20rem 0rem;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    &-title {
+      font-size: 3.6rem;
+      font-weight: 600;
+      max-width: 44.5rem;
+      text-transform: uppercase;
+
+      span {
+        color: $color-primary;
+      }
+    }
+    &-description {
+      max-width: 44.5rem;
+      font-size: 1.5rem;
+      color: #7d7d7d;
+
+      line-height: 2.5rem;
+    }
+  }
+  &__imgBox {
+    height: 50rem;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 1.2rem;
+    }
+  }
+}
