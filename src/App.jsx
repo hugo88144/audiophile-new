@@ -1,23 +1,18 @@
-import NavBar from "./components/Nav";
-import HeaderContent from "./components/HeaderContent";
-import SectionOne from "./pages/SectionOne";
-import AudioPoducts from "./components/AuidoPoducts";
-import SectionTwo from "./components/SectionTwo";
-import ProductCard from "./components/ProductCard";
-import "./sass/main.scss";
-
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Homepage from "./pages/Homepage";
+import Headphone from "./pages/Headphone";
+import Speakers from "./pages/Speakers";
+import Earphones from "./pages/Earphones";
 function App() {
   return (
-    <div className="box">
-      <SectionOne>
-        <NavBar />
-        <HeaderContent />
-      </SectionOne>
-      <AudioPoducts />
-      <SectionTwo />
-      <ProductCard />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="headphone" element={<Headphone />} />
+        <Route path="speakers" element={<Speakers />} />
+        <Route path="earphones" element={<Earphones />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
