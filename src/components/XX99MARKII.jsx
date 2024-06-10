@@ -12,7 +12,6 @@ function XX99markII() {
         <p className="XX99markIICard__text-description">
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.
-          We have a large showroom and luxury demonstration rooms available for
         </p>
       </div>
     </div>
