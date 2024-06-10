@@ -10,7 +10,10 @@ function HeaderContent() {
         for the passionate music enthusiast.
       </p>
 
-      <BtnSee className="content__btn-see" />
+      <BtnSee
+        className="content__btn-see"
+        link="/headphones/xx99-mark-two-headphones"
+      />
     </div>
   );
 }
