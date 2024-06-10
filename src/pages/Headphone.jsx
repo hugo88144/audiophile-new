@@ -1,7 +1,11 @@
+import NavBar from "../components/Nav";
+import ProductCard from "../components/ProductCard";
+
 function Headphone() {
   return (
     <div className="box">
-      <h1>Headphone</h1>
+      <NavBar />
+      <ProductCard />
     </div>
   );
 }
