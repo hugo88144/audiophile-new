@@ -15,7 +15,6 @@ function XX99markII() {
           We have a large showroom and luxury demonstration rooms available for
           you to browse and experience a wide range of our XX99markIIs. Stop by
           our store to meet some of the fantastic people who make Audiophile the
-          best place to buy your portable audio equipment.
         </p>
       </div>
     </div>
