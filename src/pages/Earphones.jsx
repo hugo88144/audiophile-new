@@ -1,5 +1,21 @@
+import NavBar from "../components/Nav";
+import ProductCard from "../components/ProductCard";
+import Header from "../components/Header";
+
+import AudioProducts from "../components/AuidoPoducts";
+import YX1 from "../components/YX1";
+
 function Earphones() {
-  return <div>Earphones</div>;
+  return (
+    <div className="box">
+      <NavBar />
+      <Header text="Earphones" />
+      <YX1 />
+      <AudioProducts />
+
+      <ProductCard />
+    </div>
+  );
 }
 
 export default Earphones;

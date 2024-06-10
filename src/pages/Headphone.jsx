@@ -3,6 +3,8 @@ import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import XX99MARKII from "../components/XX99MARKII";
 import XX99MARKI from "../components/XX99MARKI";
+import XX59 from "../components/XX59";
+import AudioProducts from "../components/AuidoPoducts";
 
 function Headphone() {
   return (
@@ -11,6 +13,9 @@ function Headphone() {
       <Header text="HEADPHONES" />
       <XX99MARKII />
       <XX99MARKI />
+      <XX59 />
+      <AudioProducts />
+
       <ProductCard />
     </div>
   );

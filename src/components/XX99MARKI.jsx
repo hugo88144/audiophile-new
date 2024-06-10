@@ -6,9 +6,9 @@ function XX99MARKI() {
       <div className="content2">
         <div className="content2__title">XX99 Mark I Headphones </div>
         <p className="content2__description">
-          The new XX99 Mark I headphones is the pinnacle of pristine audio. It
-          redefines your premium headphone experience by reproducing the
-          balanced depth and precision of studio-quality sound.
+          As the gold standard for headphones, the classic XX99 Mark I offers
+          detailed and accurate audio reproduction for audiophiles, mixing
+          engineers, and music aficionados alike in studios and on the go.
         </p>
 
         <BtnSee className="content2__btn-see" />
