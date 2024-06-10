@@ -1,13 +1,14 @@
 import NavBar from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 
-import AudioProducts from "../components/AuidoPoducts";
+import AudioProducts from "../components/AuidoProducts";
+import AudioProductsV2 from "../components/AudioProductsV2";
 
-function ProductDetail() {
+function XX99II() {
   return (
     <div className="box">
       <NavBar />
-
+      <AudioProductsV2 />
       <AudioProducts />
 
       <ProductCard />
@@ -15,4 +16,4 @@ function ProductDetail() {
   );
 }
 
-export default ProductDetail;
+export default XX99II;

@@ -15,7 +15,10 @@ function XX99MARKII() {
           balanced depth and precision of studio-quality sound.
         </p>
 
-        <BtnSee className="content2__btn-see" />
+        <BtnSee
+          className="content2__btn-see"
+          link="/headphones/xx99-mark-two-headphones"
+        />
       </div>
     </div>
   );

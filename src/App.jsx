@@ -3,8 +3,9 @@ import Homepage from "./pages/Homepage";
 import Headphone from "./pages/Headphone";
 import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
-import ProductDetail from "./pages/ProductDetail";
+
 import Footer from "./components/Footer";
+import XX99II from "./pages/XX99II";
 function App() {
   return (
     <BrowserRouter>
@@ -13,9 +14,9 @@ function App() {
         <Route path="headphones" element={<Headphone />} />
         <Route
           path="headphones/xx99-mark-two-headphones"
-          element={<ProductDetail />}
+          element={<XX99II />}
         />
-        <Route
+        {/* <Route
           path="headphones/xx99-mark-one-headphones"
           element={<ProductDetail />}
         />
@@ -25,7 +26,7 @@ function App() {
         <Route
           path="earphones/yx1-wireless-earphones"
           element={<ProductDetail />}
-        />
+        /> */}
 
         <Route path="speakers" element={<Speakers />} />
         <Route path="earphones" element={<Earphones />} />

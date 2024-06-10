@@ -11,7 +11,10 @@ function XX99MARKI() {
           engineers, and music aficionados alike in studios and on the go.
         </p>
 
-        <BtnSee className="content2__btn-see" />
+        <BtnSee
+          className="content2__btn-see"
+          link="/headphones/xx99-mark-one-headphones"
+        />
       </div>
       <div className="XX99MARKICard__imgBox">
         <img src={XX99MARKICardImg} className="XX99MARKICard__imgBox-img" />

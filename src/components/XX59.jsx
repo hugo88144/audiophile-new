@@ -16,7 +16,10 @@ function XX59() {
           wireless headset is a brilliant companion at home or on the move.
         </p>
 
-        <BtnSee className="content2__btn-see" />
+        <BtnSee
+          className="content2__btn-see"
+          link="/headphones/xx59-headphones"
+        />
       </div>
     </div>
   );

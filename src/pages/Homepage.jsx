@@ -1,4 +1,4 @@
-import AudioPoducts from "../components/AuidoPoducts";
+import AudioPoducts from "../components/AuidoProducts";
 import SectionTwo from "../components/SectionTwo";
 import ProductCard from "../components/ProductCard";
 import SectionOne from "../components/SectionOne";
