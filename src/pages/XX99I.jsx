@@ -3,20 +3,20 @@ import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
 import AudioProductsV2 from "../components/AudioProductsV2";
-import XX99IIImgs from "../components/XX99IIImgs";
-import XX99MARKIcard from "../components/XX99MARKIcard.jsx";
-import XX59card from "../components/XX59card.jsx";
-import ZX9card from "../components/ZX9card.jsx";
+import XX99IImgs from "../components/XX99IImgs";
+import XX99MARKIcard from "../components/XX99MARKIcard";
+import XX59card from "../components/XX59card";
+import ZX9card from "../components/ZX9card";
 
-function XX99II() {
+function XX99I() {
   return (
     <div className="box">
       <NavBar />
-      <XX99IIImgs />
+      <XX99IImgs />
       <AudioProductsV2>
         <XX99MARKIcard />
-        <ZX9card />
         <XX59card />
+        <ZX9card />
       </AudioProductsV2>
       <AudioProducts />
 
@@ -25,4 +25,4 @@ function XX99II() {
   );
 }
 
-export default XX99II;
+export default XX99I;

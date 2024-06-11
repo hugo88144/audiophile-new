@@ -6,6 +6,7 @@ import Earphones from "./pages/Earphones";
 
 import Footer from "./components/Footer";
 import XX99II from "./pages/XX99II";
+import XX99I from "./pages/XX99I";
 import "./sass/main.scss";
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           path="headphones/xx99-mark-two-headphones"
           element={<XX99II />}
         />
+        <Route path="headphones/xx99-mark-one-headphones" element={<XX99I />} />
         {/* <Route
           path="headphones/xx99-mark-one-headphones"
           element={<ProductDetail />}
