@@ -1,38 +1,19 @@
-import XX99IIIMG from "../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
-import XX99IIMG from "../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg";
-import XX59IMG from "../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg";
-import BtnSee from "./BtnSee";
+// import XX99MARKIIcard from "./XX99MARKIIcard.jsx";
+import XX99MARKIcard from "./XX99MARKIcard.jsx";
+import XX59card from "./XX59card.jsx";
+import ZX9card from "./ZX9card.jsx";
+// import ZX7card from "./ZX7card.jsx";
 
 function AudioProductsV2() {
   return (
     <div className="audioProductsV2">
       <div className="audioProductsV2__title">YOU MAY ALSO LIKE</div>
-      <div className="card">
-        <img src={XX99IIIMG} alt="headphone" className="card__img" />
-        <div className="card__title">XX99 MARK II</div>
-        <BtnSee
-          className="content__btn-see"
-          link="/headphones/xx99-mark-two-headphones"
-        />
-      </div>
+      <XX99MARKIcard />
+      {/* <XX99MARKIIcard /> */}
 
-      <div className="card">
-        <img src={XX99IIMG} alt="headphone" className="card__img" />
-        <div className="card__title">XX99 MARK I</div>
-        <BtnSee
-          className="content__btn-see"
-          link="/headphones/xx99-mark-one-headphones"
-        />
-      </div>
-
-      <div className="card">
-        <img src={XX59IMG} alt="headphone" className="card__img" />
-        <div className="card__title">XX59</div>
-        <BtnSee
-          className="content__btn-see"
-          link="/headphones/xx59-headphones"
-        />
-      </div>
+      <XX59card />
+      <ZX9card />
+      {/* <ZX7card /> */}
     </div>
   );
 }

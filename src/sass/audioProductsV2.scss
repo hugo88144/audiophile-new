@@ -3,19 +3,30 @@
   width: 100%;
   flex-wrap: wrap;
   gap: 3rem;
+  font-weight: 600;
   padding: 10rem 20% 0rem 20%;
   &__title {
+    text-align: center;
     width: 111rem;
     font-size: 3rem;
   }
 }
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
   width: 35rem;
   height: 47.1rem;
   &__title {
+    font-size: 2rem;
   }
-  &__img {
-    width: 100%;
-    height: auto;
+  &__imgBox {
+    width: 35rem;
+    height: 31.8rem;
+    &-img {
+      width: auto;
+      height: 100%;
+    }
   }
 }
