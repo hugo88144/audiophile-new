@@ -6,6 +6,7 @@ import Earphones from "./pages/Earphones";
 
 import Footer from "./components/Footer";
 import XX99II from "./pages/XX99II";
+import "./sass/main.scss";
 function App() {
   return (
     <BrowserRouter>

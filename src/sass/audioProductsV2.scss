@@ -1,0 +1,18 @@
+.audioProductsV2 {
+  display: flex;
+  width: 111rem;
+  &__title {
+    width: 100%;
+    font-size: 3rem;
+  }
+}
+.card {
+  width: 35rem;
+  height: 47.1rem;
+  &__title {
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+  }
+}
