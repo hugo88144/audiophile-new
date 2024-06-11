@@ -1,8 +1,11 @@
 .audioProductsV2 {
   display: flex;
-  width: 111rem;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 10rem 20% 0rem 20%;
   &__title {
-    width: 100%;
+    width: 111rem;
     font-size: 3rem;
   }
 }
