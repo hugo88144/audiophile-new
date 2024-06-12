@@ -1,9 +1,9 @@
 function XX99Features() {
   return (
-    <div className="Features">
-      <div className="Features__Description">
-        <div className="Features__Title">FEATURES</div>
-        <div className="Features__DescriptionText">
+    <div className="features">
+      <div className="features__Description">
+        <div className="features__Title">FEATURES</div>
+        <div className="features__DescriptionText">
           Featuring a genuine leather head strap and premium earcups, these
           headphones deliver superior comfort for those who like to enjoy
           endless listening. It includes intuitive controls designed for any
@@ -19,35 +19,35 @@ function XX99Features() {
         </div>
       </div>
       ;
-      <div className="Features__includes">
-        <div className="Features__includes-title">IN THE BOX</div>
+      <div className="features__includes">
+        <div className="features__includes-title">IN THE BOX</div>
 
-        <div className="Features__includes-quantityBox">
-          <div className="Features__includes-quantity">
+        <div className="features__includes-quantityBox">
+          <div className="features__includes-quantity">
             <span>1x</span> Headphone Unit
           </div>
         </div>
 
-        <div className="Features__includes-quantityBox">
-          <div className="Features__includes-quantity">
+        <div className="features__includes-quantityBox">
+          <div className="features__includes-quantity">
             <span>2x</span>Replacement earcups
           </div>
         </div>
 
-        <div className="Features__includes-quantityBox">
-          <div className="Features__includes-quantity">
+        <div className="features__includes-quantityBox">
+          <div className="features__includes-quantity">
             <span>1x</span>User manual
           </div>
         </div>
 
-        <div className="Features__includes-quantityBox">
-          <div className="Features__includes-quantity">
+        <div className="features__includes-quantityBox">
+          <div className="features__includes-quantity">
             <span>1x</span>3.5mm 5m audio cable
           </div>
         </div>
 
-        <div className="Features__includes-quantityBox">
-          <div className="Features__includes-quantity">
+        <div className="features__includes-quantityBox">
+          <div className="features__includes-quantity">
             <span>1x</span>Travel bag
           </div>
         </div>
