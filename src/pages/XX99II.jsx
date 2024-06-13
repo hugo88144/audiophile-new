@@ -9,10 +9,13 @@ import XX59card from "../components/XX59card.jsx";
 import ZX9card from "../components/ZX9card.jsx";
 import XX99IIFeatures from "../components/XX99IIFeatures.jsx";
 
+import XX99MARKII from "../components/XX99MARKII";
+
 function XX99II() {
   return (
     <div className="box">
       <NavBar />
+      <XX99MARKII>hi</XX99MARKII>
       <XX99IIFeatures />
       <XX99IIImgs />
       <AudioProductsV2>

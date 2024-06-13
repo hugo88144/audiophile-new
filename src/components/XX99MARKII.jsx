@@ -1,6 +1,6 @@
 import XX99MARKIICardImg from "../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
-function XX99MARKII() {
+function XX99MARKII({ children }) {
   return (
     <div className="XX99MARKIICard">
       <div className="XX99MARKIICard__imgBox">
@@ -14,11 +14,18 @@ function XX99MARKII() {
           redefines your premium headphone experience by reproducing the
           balanced depth and precision of studio-quality sound.
         </p>
-
-        <BtnSee
+        {children ? (
+          children
+        ) : (
+          <BtnSee
+            className="content2__btn-see"
+            link="/headphones/xx99-mark-two-headphones"
+          />
+        )}
+        {/* <BtnSee
           className="content2__btn-see"
           link="/headphones/xx99-mark-two-headphones"
-        />
+        /> */}
       </div>
     </div>
   );
