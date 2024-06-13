@@ -11,11 +11,15 @@ import XX99IIFeatures from "../components/XX99IIFeatures.jsx";
 
 import XX99MARKII from "../components/XX99MARKII";
 
+import AddToCart from "../components/AddToCart.jsx";
+
 function XX99II() {
   return (
     <div className="box">
       <NavBar />
-      <XX99MARKII>hi</XX99MARKII>
+      <XX99MARKII>
+        <AddToCart price="2,999" />
+      </XX99MARKII>
       <XX99IIFeatures />
       <XX99IIImgs />
       <AudioProductsV2>

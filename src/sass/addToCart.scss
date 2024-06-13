@@ -1,0 +1,28 @@
+.addToCart {
+  display: flex;
+  &__price {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+  }
+  &__btn {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $color-white;
+    background-color: $color-primary;
+    border: none;
+    width: 16rem;
+    height: 5rem;
+    text-transform: uppercase;
+  }
+  &__btnBox {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.btn__counter {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
