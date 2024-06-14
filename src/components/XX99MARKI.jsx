@@ -1,6 +1,6 @@
 import XX99MARKICardImg from "../assets/product-xx99-mark-one-headphones/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
-function XX99MARKI() {
+function XX99MARKI({ children }) {
   return (
     <div className="XX99MARKICard">
       <div className="content2">
@@ -11,10 +11,14 @@ function XX99MARKI() {
           engineers, and music aficionados alike in studios and on the go.
         </p>
 
-        <BtnSee
-          className="content2__btn-see"
-          link="/headphones/xx99-mark-one-headphones"
-        />
+        {children ? (
+          children
+        ) : (
+          <BtnSee
+            className="content2__btn-see"
+            link="/headphones/xx99-mark-one-headphones"
+          />
+        )}
       </div>
       <div className="XX99MARKICard__imgBox">
         <img src={XX99MARKICardImg} className="XX99MARKICard__imgBox-img" />

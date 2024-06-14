@@ -9,10 +9,17 @@ import XX59card from "../components/XX59card";
 import ZX9card from "../components/ZX9card";
 import XX99IFeatures from "../components/XX99IFeatures";
 
+import AddToCart from "../components/AddToCart";
+
+import XX99MARKI from "../components/XX99MARKI";
+
 function XX99I() {
   return (
     <div className="box">
       <NavBar />
+      <XX99MARKI>
+        <AddToCart price="1,750" />
+      </XX99MARKI>
       <XX99IFeatures />
 
       <XX99IImgs />

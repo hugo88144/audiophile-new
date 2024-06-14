@@ -1,6 +1,6 @@
 import XX59Img from "../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
-function XX59() {
+function XX59({ children }) {
   return (
     <div className="XX59">
       <div className="XX59__imgBox">
@@ -16,10 +16,14 @@ function XX59() {
           wireless headset is a brilliant companion at home or on the move.
         </p>
 
-        <BtnSee
-          className="content2__btn-see"
-          link="/headphones/xx59-headphones"
-        />
+        {children ? (
+          children
+        ) : (
+          <BtnSee
+            className="content2__btn-see"
+            link="/headphones/xx99-mark-two-headphones"
+          />
+        )}
       </div>
     </div>
   );
