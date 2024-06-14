@@ -12,11 +12,13 @@ import XX99IFeatures from "../components/XX99IFeatures";
 import AddToCart from "../components/AddToCart";
 
 import XX99MARKI from "../components/XX99MARKI";
+import GoBack from "../components/GoBack";
 
 function XX99I() {
   return (
     <div className="box">
       <NavBar />
+      <GoBack />
       <XX99MARKI>
         <AddToCart price="1,750" />
       </XX99MARKI>

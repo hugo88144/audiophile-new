@@ -13,11 +13,13 @@ import ZX9card from "../components/ZX9card.jsx";
 import YX1Imgs from "../components/YX1Imgs.jsx";
 import YX1Features from "../components/YX1Features.jsx";
 import YX1 from "../components/YX1.jsx";
+import GoBack from "../components/GoBack.jsx";
 
 function YX1Page() {
   return (
     <div className="box">
       <NavBar />
+      <GoBack />
       <YX1>
         <AddToCart price="4,500" />
       </YX1>

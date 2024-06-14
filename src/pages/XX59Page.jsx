@@ -12,11 +12,13 @@ import XX59Features from "../components/XX59Features";
 import XX59 from "../components/XX59";
 
 import AddToCart from "../components/AddToCart";
+import GoBack from "../components/GoBack";
 
 function XX59Page() {
   return (
     <div className="box">
       <NavBar />
+      <GoBack />
 
       <XX59>
         <AddToCart price="899" />

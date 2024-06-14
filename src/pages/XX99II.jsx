@@ -13,10 +13,13 @@ import XX99MARKII from "../components/XX99MARKII";
 
 import AddToCart from "../components/AddToCart.jsx";
 
+import GoBack from "../components/GoBack.jsx";
+
 function XX99II() {
   return (
     <div className="box">
       <NavBar />
+      <GoBack />
       <XX99MARKII>
         <AddToCart price="2,999" />
       </XX99MARKII>
