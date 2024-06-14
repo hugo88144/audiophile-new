@@ -3,7 +3,9 @@
   &__price {
     font-size: 2rem;
     font-weight: 700;
-    display: block;
+    width: 70rem;
+    flex-wrap: wrap;
+    letter-spacing: 0.3rem;
   }
   &__btn {
     font-weight: 600;
@@ -21,8 +23,25 @@
   }
 }
 
-.btn__counter {
+.btnCounter {
   display: flex;
-  gap: 1rem;
   align-items: center;
+  justify-content: center;
+  width: 10rem;
+  background-color: $color-light-gray;
+  gap: 2rem;
+  &__minus {
+    padding-bottom: 0.4rem;
+    color: #b5b5b5;
+    font-size: 1.8rem;
+    border: none;
+  }
+  &__plus {
+    color: #b5b5b5;
+    font-size: 1.8rem;
+    border: none;
+  }
+  &__quantity {
+    font-size: 1.4rem;
+  }
 }

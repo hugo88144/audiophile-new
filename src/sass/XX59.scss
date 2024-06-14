@@ -25,7 +25,7 @@
   justify-content: center;
   color: $color-black;
   max-width: 44.5rem;
-  gap: 3.5rem;
+  gap: 4rem;
   &__new {
     font-weight: 400;
     font-size: 1.5rem;
@@ -36,15 +36,15 @@
 
   &__title {
     font-weight: 600;
-    font-size: 3.5rem;
+    font-size: 4rem;
     text-transform: uppercase;
-    line-height: 3.5rem;
+    line-height: 4rem;
   }
 
   &__description {
     font-weight: 500;
     font-size: 1.6rem;
-    color: #c0c5c5;
+    color: #858585;
     line-height: 2.5rem;
   }
 

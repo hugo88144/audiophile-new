@@ -1,9 +1,9 @@
 function BtnCounter() {
   return (
-    <div className="BtnCounter">
-      <button className="BtnCounter__minus">-</button>
-      <span className="BtnCounter__quantity">0</span>
-      <button className="BtnCounter__plus">+</button>
+    <div className="btnCounter">
+      <button className="btnCounter__minus">-</button>
+      <span className="btnCounter__quantity">0</span>
+      <button className="btnCounter__plus">+</button>
     </div>
   );
 }
