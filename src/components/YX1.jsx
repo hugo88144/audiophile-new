@@ -1,6 +1,7 @@
 import YX1CardImg from "../assets/product-yx1-earphones/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
-function YX1() {
+// eslint-disable-next-line react/prop-types
+function YX1({ children }) {
   return (
     <div className="XX99MARKIICard">
       <div className="XX99MARKIICard__imgBox">
@@ -13,14 +14,18 @@ function YX1() {
           redefines your premium headphone experience by reproducing the
           balanced depth and precision of studio-quality sound.
         </p>
-
-        <BtnSee
-          className="content2__btn-see"
-          link="/earphones/yx1-wireless-earphones"
-        />
+        {children ? (
+          children
+        ) : (
+          <BtnSee
+            className="content2__btn-see"
+            link="/earphones/yx1-wireless-earphones"
+          />
+        )}
       </div>
     </div>
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default YX1;

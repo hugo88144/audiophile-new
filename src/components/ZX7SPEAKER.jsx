@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import ZX7SPEAKERCardImg from "../assets/product-zx7-speaker/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
-function ZX7SPEAKER() {
+function ZX7SPEAKER({ children }) {
   return (
     <div className="XX99MARKIICard">
       <div className="content2">
@@ -11,7 +12,11 @@ function ZX7SPEAKER() {
           the top of the line powered speakers for home or studio use.
         </p>
 
-        <BtnSee className="content2__btn-see" link="/speakers/zx7-speaker" />
+        {children ? (
+          children
+        ) : (
+          <BtnSee className="content2__btn-see" link="/speakers/zx7-speaker" />
+        )}
       </div>
       <div className="XX99MARKIICard__imgBox">
         <img src={ZX7SPEAKERCardImg} className="XX99MARKIICard__imgBox-img" />
@@ -20,4 +25,5 @@ function ZX7SPEAKER() {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default ZX7SPEAKER;

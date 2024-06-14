@@ -8,10 +8,7 @@ function ZX7card() {
         <img src={ZX7cardIMG} alt="headphone" className="card__imgBox-img" />
       </div>
       <div className="card__title">ZX7 Speaker</div>
-      <BtnSee
-        className="content__btn-see"
-        link="/headphones/ZX7card-speakers"
-      />
+      <BtnSee className="content__btn-see" link="/speakers/zx7-speaker" />
     </div>
   );
 }

@@ -9,6 +9,9 @@ import XX99II from "./pages/XX99II";
 import XX99I from "./pages/XX99I";
 import "./sass/main.scss";
 import XX59Page from "./pages/XX59Page";
+import ZX9Page from "./pages/ZX9Page";
+import ZX7Page from "./pages/ZX7Page";
+import YX1Page from "./pages/YX1Page";
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +24,9 @@ function App() {
         />
         <Route path="headphones/xx99-mark-one-headphones" element={<XX99I />} />
         <Route path="headphones/xx59-headphones" element={<XX59Page />} />
+        <Route path="speakers/zx9-speaker" element={<ZX9Page />} />
+        <Route path="speakers/zx7-speaker" element={<ZX7Page />} />
+        <Route path="earphones/yx1-wireless-earphones" element={<YX1Page />} />
 
         <Route path="speakers" element={<Speakers />} />
         <Route path="earphones" element={<Earphones />} />

@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import ZX9SPEAKERCardImg from "../assets/product-zx9-speaker/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
-function ZX9SPEAKER() {
+function ZX9SPEAKER({ children }) {
   return (
     <div className="XX99MARKIICard">
       <div className="XX99MARKIICard__imgBox">
@@ -18,10 +19,15 @@ function ZX9SPEAKER() {
           setups.
         </p>
 
-        <BtnSee className="content2__btn-see" link="/speakers/zx9-speaker" />
+        {children ? (
+          children
+        ) : (
+          <BtnSee className="content2__btn-see" link="/speakers/zx9-speaker" />
+        )}
       </div>
     </div>
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default ZX9SPEAKER;
