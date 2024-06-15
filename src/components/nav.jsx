@@ -2,7 +2,7 @@ import logo from "../assets/shared/desktop/logo.svg";
 
 import { Link } from "react-router-dom";
 import Basket from "./Basket";
-
+// eslint-disable-next-line react/prop-types
 function NavBar() {
   return (
     <nav className="nav">
