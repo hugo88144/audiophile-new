@@ -30,6 +30,7 @@
   width: 10rem;
   background-color: $color-light-gray;
   gap: 2rem;
+  padding: 0.7rem;
 
   &__minus {
     padding-bottom: 0.4rem;
@@ -45,4 +46,8 @@
   &__quantity {
     font-size: 1.4rem;
   }
+}
+
+.cart__empty {
+  font-size: 1.7rem;
 }

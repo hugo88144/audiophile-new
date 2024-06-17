@@ -1,10 +1,13 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import cart from "../assets/shared/desktop/icon-cart.svg";
 import Cart from "./Cart";
+import { useCart } from "../Context/CartContext";
 
 // eslint-disable-next-line react/prop-types
-function Basket({ cartItems, setCartItems }) {
+function Basket() {
   const [cartActive, setCartActive] = useState(false);
+  const { cartItems, setCartItems } = useCart();
 
   function handleBasket() {
     setCartActive(!cartActive);
@@ -18,6 +21,7 @@ function Basket({ cartItems, setCartItems }) {
         alt="Cart Icon"
         onClick={handleBasket}
       />
+      {cartItems.length > 0 && <div className="items">{cartItems.length}</div>}
       {cartActive && (
         <>
           <div className="overlay" onClick={handleBasket}></div>

@@ -1,5 +1,8 @@
+import { useCart } from "../Context/CartContext";
+
 /* eslint-disable react/prop-types */
-function BtnCounter({ quantity, onQuantityChange }) {
+function BtnCounter() {
+  const { quantity, onQuantityChange } = useCart();
   function Handleincrement() {
     onQuantityChange(quantity + 1);
   }

@@ -1,13 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useCart } from "../Context/CartContext";
 import BtnCounter from "./BtnCounter";
 
-function AddToCart({
-  price,
-  onAddToCart,
-  productName,
-  quantity,
-  onSetQuantity,
-}) {
+function AddToCart({ price, productName }) {
+  const { onAddToCart } = useCart();
+
   const handleClick = () => {
     onAddToCart({ productName, price: parseFloat(price.replace(",", "")) });
   };
@@ -17,7 +14,7 @@ function AddToCart({
       <div className="addToCart__price">${price}</div>
       <div className="addToCart">
         <div className="addToCart__btnBox">
-          <BtnCounter quantity={quantity} onQuantityChange={onSetQuantity} />
+          <BtnCounter />
           <button className="addToCart__btn" onClick={handleClick}>
             Add to cart
           </button>

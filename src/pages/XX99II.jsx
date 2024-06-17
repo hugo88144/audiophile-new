@@ -16,25 +16,13 @@ import AddToCart from "../components/AddToCart.jsx";
 
 import GoBack from "../components/GoBack.jsx";
 
-function XX99II({
-  onAddToCart,
-  cartItems,
-  setCartItems,
-  quantity,
-  onSetQuantity,
-}) {
+function XX99II({}) {
   return (
     <div className="box">
-      <NavBar cartItems={cartItems} setCartItems={setCartItems} />
+      <NavBar />
       <GoBack />
       <XX99MARKII>
-        <AddToCart
-          price="2,999"
-          productName="XX99 MARK II"
-          onAddToCart={onAddToCart}
-          quantity={quantity}
-          onSetQuantity={onSetQuantity}
-        />
+        <AddToCart />
       </XX99MARKII>
       <XX99IIFeatures />
       <XX99IIImgs />
