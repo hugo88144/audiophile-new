@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import NavBar from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 
@@ -15,7 +16,13 @@ import AddToCart from "../components/AddToCart.jsx";
 
 import GoBack from "../components/GoBack.jsx";
 
-function XX99II({ onAddToCart, cartItems, setCartItems }) {
+function XX99II({
+  onAddToCart,
+  cartItems,
+  setCartItems,
+  quantity,
+  onSetQuantity,
+}) {
   return (
     <div className="box">
       <NavBar cartItems={cartItems} setCartItems={setCartItems} />
@@ -25,6 +32,8 @@ function XX99II({ onAddToCart, cartItems, setCartItems }) {
           price="2,999"
           productName="XX99 MARK II"
           onAddToCart={onAddToCart}
+          quantity={quantity}
+          onSetQuantity={onSetQuantity}
         />
       </XX99MARKII>
       <XX99IIFeatures />

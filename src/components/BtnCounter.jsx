@@ -1,12 +1,10 @@
-import { useState } from "react";
-
-function BtnCounter() {
-  const [quantity, setQuantity] = useState(0);
+/* eslint-disable react/prop-types */
+function BtnCounter({ quantity, onQuantityChange }) {
   function Handleincrement() {
-    setQuantity(quantity + 1);
+    onQuantityChange(quantity + 1);
   }
   function Handledecrement() {
-    setQuantity(quantity - 1);
+    onQuantityChange(quantity - 1);
   }
 
   return (

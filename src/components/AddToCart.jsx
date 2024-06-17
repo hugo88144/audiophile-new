@@ -1,15 +1,23 @@
+/* eslint-disable react/prop-types */
 import BtnCounter from "./BtnCounter";
-// eslint-disable-next-line react/prop-types
-function AddToCart({ price, onAddToCart, productName }) {
+
+function AddToCart({
+  price,
+  onAddToCart,
+  productName,
+  quantity,
+  onSetQuantity,
+}) {
   const handleClick = () => {
-    onAddToCart({ productName, price });
+    onAddToCart({ productName, price: parseFloat(price.replace(",", "")) });
   };
+
   return (
     <>
       <div className="addToCart__price">${price}</div>
       <div className="addToCart">
         <div className="addToCart__btnBox">
-          <BtnCounter />
+          <BtnCounter quantity={quantity} onQuantityChange={onSetQuantity} />
           <button className="addToCart__btn" onClick={handleClick}>
             Add to cart
           </button>

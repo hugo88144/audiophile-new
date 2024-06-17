@@ -1,10 +1,29 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import XX99IICartIMG from "../assets/cart/image-xx99-mark-two-headphones.jpg";
 import BtnCounter from "./BtnCounter";
 
 function Cart({ cartItems, setCartItems }) {
   const removeAllItems = () => {
     setCartItems([]);
+  };
+
+  const updateItemQuantity = (index, quantity) => {
+    setCartItems((prevItems) => {
+      const updatedItems = [...prevItems];
+      if (quantity > 0) {
+        updatedItems[index].quantity = quantity;
+      } else {
+        updatedItems.splice(index, 1);
+      }
+      return updatedItems;
+    });
+  };
+
+  const calculateTotal = () => {
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   return (
@@ -29,7 +48,12 @@ function Cart({ cartItems, setCartItems }) {
                 <div className="cart__content-title">{item.productName}</div>
                 <div className="cart__content-price">$ {item.price}</div>
               </div>
-              <BtnCounter />
+              <BtnCounter
+                quantity={item.quantity}
+                onQuantityChange={(quantity) =>
+                  updateItemQuantity(index, quantity)
+                }
+              />
             </div>
           ))}
         </div>
@@ -39,7 +63,7 @@ function Cart({ cartItems, setCartItems }) {
 
       <div className="cart__Total">
         <div className="cart__Total-title">TOTAL</div>
-        <div className="cart__Total-price">$ 1,699</div>
+        <div className="cart__Total-price">$ {calculateTotal()}</div>
       </div>
       <button className="cart__btn">Checkout</button>
     </div>

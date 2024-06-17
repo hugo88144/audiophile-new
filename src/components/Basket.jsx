@@ -2,6 +2,7 @@ import { useState } from "react";
 import cart from "../assets/shared/desktop/icon-cart.svg";
 import Cart from "./Cart";
 
+// eslint-disable-next-line react/prop-types
 function Basket({ cartItems, setCartItems }) {
   const [cartActive, setCartActive] = useState(false);
 
