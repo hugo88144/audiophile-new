@@ -20,7 +20,7 @@ function XX99I() {
       <NavBar />
       <GoBack />
       <XX99MARKI>
-        <AddToCart price="1,750" />
+        <AddToCart price="1,750" productName={"XX99 Mark I Headphones"} />
       </XX99MARKI>
       <XX99IFeatures />
 
@@ -37,4 +37,5 @@ function XX99I() {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default XX99I;

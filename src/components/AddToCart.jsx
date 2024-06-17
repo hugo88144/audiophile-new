@@ -14,7 +14,7 @@ function AddToCart({ price, productName }) {
       <div className="addToCart__price">${price}</div>
       <div className="addToCart">
         <div className="addToCart__btnBox">
-          <BtnCounter />
+          <BtnCounter productName={productName} />
           <button className="addToCart__btn" onClick={handleClick}>
             Add to cart
           </button>

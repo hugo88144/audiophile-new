@@ -16,26 +16,6 @@ import ZX7Page from "./pages/ZX7Page";
 import YX1Page from "./pages/YX1Page";
 import { CartProvider } from "./Context/CartContext";
 function App() {
-  const [cartItems, setCartItems] = useState([]);
-  const [quantity, setQuantity] = useState(1);
-
-  // Function to handle adding an item to the cart
-  const addToCart = ({ productName, price }) => {
-    setCartItems((prevItems) => {
-      const itemIndex = prevItems.findIndex(
-        (item) => item.productName === productName
-      );
-      if (itemIndex >= 0) {
-        const updatedItems = [...prevItems];
-        updatedItems[itemIndex].quantity += quantity;
-        return updatedItems;
-      } else {
-        return [...prevItems, { productName, price, quantity }];
-      }
-    });
-    setQuantity(1); // Reset quantity after adding to cart
-  };
-
   return (
     <CartProvider>
       <BrowserRouter>

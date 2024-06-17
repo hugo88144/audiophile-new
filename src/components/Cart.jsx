@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
+import { useCart } from "../Context/CartContext";
 import XX99IICartIMG from "../assets/cart/image-xx99-mark-two-headphones.jpg";
 import BtnCounter from "./BtnCounter";
 
-function Cart({ cartItems, setCartItems }) {
+function Cart() {
+  const { cartItems, setCartItems } = useCart();
   const removeAllItems = () => {
     setCartItems([]);
   };

@@ -7,7 +7,8 @@ import { useCart } from "../Context/CartContext";
 // eslint-disable-next-line react/prop-types
 function Basket() {
   const [cartActive, setCartActive] = useState(false);
-  const { cartItems, setCartItems } = useCart();
+
+  const { cartItems } = useCart();
 
   function handleBasket() {
     setCartActive(!cartActive);
@@ -25,7 +26,7 @@ function Basket() {
       {cartActive && (
         <>
           <div className="overlay" onClick={handleBasket}></div>
-          <Cart cartItems={cartItems} setCartItems={setCartItems} />
+          <Cart />
         </>
       )}
     </>

@@ -1,39 +1,55 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-// Create a context object
 const CartContext = createContext();
 
-// Create a provider component
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  const [quantity, setQuantity] = useState(1);
+  const [productQuantities, setProductQuantities] = useState({});
 
   const onAddToCart = ({ productName, price }) => {
-    // Implement your addToCart logic here
-    // This is just a placeholder
     setCartItems((prevItems) => {
       const itemIndex = prevItems.findIndex(
         (item) => item.productName === productName
       );
       if (itemIndex >= 0) {
         const updatedItems = [...prevItems];
-        updatedItems[itemIndex].quantity += quantity;
+        updatedItems[itemIndex].quantity += productQuantities[productName] || 1;
         return updatedItems;
       } else {
-        return [...prevItems, { productName, price, quantity }];
+        return [
+          ...prevItems,
+          { productName, price, quantity: productQuantities[productName] || 1 },
+        ];
       }
     });
-    setQuantity(1); // Reset quantity after adding to cart
+
+    // Reset quantity after adding to cart
+    setProductQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [productName]: 1,
+    }));
+  };
+
+  const onQuantityChange = (productName, newQuantity) => {
+    setProductQuantities((prevQuantities) => ({
+      ...prevQuantities,
+      [productName]: newQuantity,
+    }));
   };
 
   return (
     <CartContext.Provider
-      value={{ cartItems, onAddToCart, quantity, setQuantity }}
+      value={{
+        cartItems,
+        setCartItems,
+        onAddToCart,
+        productQuantities,
+        onQuantityChange,
+      }}
     >
       {children}
     </CartContext.Provider>
   );
 };
 
-// Custom hook to use the cart context
 export const useCart = () => useContext(CartContext);
