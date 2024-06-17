@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
 import Homepage from "./pages/Homepage";
 import Headphone from "./pages/Headphone";
 import Speakers from "./pages/Speakers";
@@ -13,6 +14,14 @@ import ZX9Page from "./pages/ZX9Page";
 import ZX7Page from "./pages/ZX7Page";
 import YX1Page from "./pages/YX1Page";
 function App() {
+  const [cartItems, setCartItems] = useState([]);
+
+  // Function to handle adding an item to the cart
+  const addToCart = ({ productName, price }) => {
+    const newItem = { productName, price };
+    setCartItems([...cartItems, newItem]);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -20,7 +29,13 @@ function App() {
         <Route path="headphones" element={<Headphone />} />
         <Route
           path="headphones/xx99-mark-two-headphones"
-          element={<XX99II />}
+          element={
+            <XX99II
+              onAddToCart={addToCart}
+              cartItems={cartItems}
+              setCartItems={setCartItems}
+            />
+          }
         />
         <Route path="headphones/xx99-mark-one-headphones" element={<XX99I />} />
         <Route path="headphones/xx59-headphones" element={<XX59Page />} />

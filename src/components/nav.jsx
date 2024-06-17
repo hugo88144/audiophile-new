@@ -3,7 +3,7 @@ import logo from "../assets/shared/desktop/logo.svg";
 import { Link } from "react-router-dom";
 import Basket from "./Basket";
 // eslint-disable-next-line react/prop-types
-function NavBar() {
+function NavBar({ cartItems, setCartItems }) {
   return (
     <nav className="nav">
       <img className="nav-link" src={logo} alt="Logo" />
@@ -20,7 +20,7 @@ function NavBar() {
       <Link to="/earphones" className="nav-link">
         EARPHONES
       </Link>
-      <Basket />
+      <Basket cartItems={cartItems} setCartItems={setCartItems} />
     </nav>
   );
 }
