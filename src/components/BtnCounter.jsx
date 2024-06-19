@@ -1,17 +1,28 @@
 /* eslint-disable react/prop-types */
+import { useState } from "react";
 import { useCart } from "../Context/CartContext";
 
-function BtnCounter({ productName }) {
-  const { productQuantities, onQuantityChange } = useCart();
-  const quantity = productQuantities[productName] || 1;
+function BtnCounter({ productName, initialQuantity }) {
+  const { dispatch } = useCart();
+  const [quantity, setQuantity] = useState(initialQuantity);
 
   const handleIncrement = () => {
-    onQuantityChange(productName, quantity + 1);
+    const newQuantity = quantity + 1;
+    setQuantity(newQuantity);
+    dispatch({
+      type: "SET_PRODUCT_QUANTITY",
+      payload: { productName, newQuantity },
+    });
   };
 
   const handleDecrement = () => {
     if (quantity > 1) {
-      onQuantityChange(productName, quantity - 1);
+      const newQuantity = quantity - 1;
+      setQuantity(newQuantity);
+      dispatch({
+        type: "SET_PRODUCT_QUANTITY",
+        payload: { productName, newQuantity },
+      });
     }
   };
 

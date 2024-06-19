@@ -1,23 +1,19 @@
 /* eslint-disable react/prop-types */
 import { useCart } from "../Context/CartContext";
-import XX99IICartIMG from "../assets/cart/image-xx99-mark-two-headphones.jpg";
 import BtnCounter from "./BtnCounter";
+import itemONE from "../assets/cart/image-xx99-mark-two-headphones.jpg";
 
 function Cart() {
-  const { cartItems, setCartItems } = useCart();
+  const { dispatch, cartItems } = useCart();
+
   const removeAllItems = () => {
-    setCartItems([]);
+    dispatch({ type: "REMOVE_ALL" });
   };
 
-  const updateItemQuantity = (index, quantity) => {
-    setCartItems((prevItems) => {
-      const updatedItems = [...prevItems];
-      if (quantity > 0) {
-        updatedItems[index].quantity = quantity;
-      } else {
-        updatedItems.splice(index, 1);
-      }
-      return updatedItems;
+  const updateItemQuantity = (productName, quantity) => {
+    dispatch({
+      type: "SET_PRODUCT_QUANTITY",
+      payload: { productName, newQuantity: quantity },
     });
   };
 
@@ -41,19 +37,16 @@ function Cart() {
         <div className="cart__content">
           {cartItems.map((item, index) => (
             <div className="cart__content-box" key={index}>
-              <img
-                src={XX99IICartIMG}
-                className="cart__content-img"
-                alt="XX99 Headphones"
-              />
+              <img src={itemONE} className="cart__content-img" alt="item one" />
               <div className="cart__content-info">
                 <div className="cart__content-title">{item.productName}</div>
                 <div className="cart__content-price">$ {item.price}</div>
               </div>
               <BtnCounter
-                quantity={item.quantity}
+                productName={item.productName}
+                initialQuantity={item.quantity}
                 onQuantityChange={(quantity) =>
-                  updateItemQuantity(index, quantity)
+                  updateItemQuantity(item.productName, quantity)
                 }
               />
             </div>
