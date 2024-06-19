@@ -1,28 +1,24 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { useCart } from "../Context/CartContext";
 
-function BtnCounter({ productName, initialQuantity }) {
-  const { dispatch } = useCart();
-  const [quantity, setQuantity] = useState(initialQuantity);
+// BtnCounter component to handle quantity increment and decrement
+function BtnCounter({ initialQuantity, onQuantityChange }) {
+  const [quantity, setQuantity] = useState(initialQuantity); // Initialize quantity state with the initial quantity
 
+  // Handle increment button click
   const handleIncrement = () => {
-    const newQuantity = quantity + 1;
-    setQuantity(newQuantity);
-    dispatch({
-      type: "SET_PRODUCT_QUANTITY",
-      payload: { productName, newQuantity },
-    });
+    const newQuantity = quantity + 1; // Increment quantity
+    setQuantity(newQuantity); // Update quantity state
+    onQuantityChange(newQuantity); // Notify parent component of quantity change
   };
 
+  // Handle decrement button click
   const handleDecrement = () => {
     if (quantity > 1) {
-      const newQuantity = quantity - 1;
-      setQuantity(newQuantity);
-      dispatch({
-        type: "SET_PRODUCT_QUANTITY",
-        payload: { productName, newQuantity },
-      });
+      // Ensure quantity doesn't go below 1
+      const newQuantity = quantity - 1; // Decrement quantity
+      setQuantity(newQuantity); // Update quantity state
+      onQuantityChange(newQuantity); // Notify parent component of quantity change
     }
   };
 
