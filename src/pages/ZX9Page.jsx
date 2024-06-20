@@ -18,7 +18,7 @@ function ZX9Page() {
     <div className="box">
       <NavBar />
       <ZX9SPEAKER>
-        <AddToCart price="4,500" />
+        <AddToCart price="4,500" productName={"ZX9 Speaker"} />
       </ZX9SPEAKER>
       <ZX9Features />
       <ZX9Imgs />

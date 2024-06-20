@@ -21,7 +21,7 @@ function YX1Page() {
       <NavBar />
       <GoBack />
       <YX1>
-        <AddToCart price="4,500" />
+        <AddToCart price="599" productName={"YX1 Earphones"} />
       </YX1>
       <YX1Features />
       <YX1Imgs />

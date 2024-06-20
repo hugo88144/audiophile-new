@@ -14,7 +14,7 @@ function GoBack() {
         cursor: "pointer",
         color: "grey",
         fontSize: "1.7rem",
-        padding: "  5rem 0   0 20%",
+        padding: "  15rem 0   0 20%",
       }}
     >
       Go back

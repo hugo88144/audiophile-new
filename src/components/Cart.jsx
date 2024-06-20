@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */ // Disable ESLint prop-types warning because PropTypes are not being used here
 
+import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext"; // Import useCart hook for accessing cart context
 import BtnCounter from "./BtnCounter"; // Import BtnCounter component for handling quantity changes
 
@@ -72,7 +73,9 @@ function Cart() {
         <div className="cart__Total-title">TOTAL</div>
         <div className="cart__Total-price">$ {calculateTotal()}</div>
       </div>
-      <button className="cart__btn">Checkout</button>
+      <Link to="/checkout" className="cart__btn">
+        <button className="cart__btn">Checkout</button>
+      </Link>
     </div>
   );
 }

@@ -50,14 +50,15 @@
 
     align-items: center;
     &-box {
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 2rem;
     }
     &-img {
       width: 6.4rem;
       height: 6.4rem;
+      margin-right: 2rem;
     }
     &-info {
       display: flex;

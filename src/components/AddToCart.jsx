@@ -9,6 +9,7 @@ import XX99I from "../assets/cart/image-xx99-mark-one-headphones.jpg";
 import XX59 from "../assets/cart/image-xx59-headphones.jpg";
 import ZX9 from "../assets/cart/image-zx9-speaker.jpg";
 import ZX7 from "../assets/cart/image-zx7-speaker.jpg";
+import YX1 from "../assets/cart/image-yx1-earphones.jpg";
 
 // Mapping product names to their corresponding image URLs
 const imageMap = {
@@ -17,6 +18,7 @@ const imageMap = {
   "XX59 Headphones": XX59,
   "ZX9 Speaker": ZX9,
   "ZX7 Speaker": ZX7,
+  "YX1 Earphones": YX1,
 };
 
 function AddToCart({ price, productName }) {

@@ -15,6 +15,7 @@ import ZX9Page from "./pages/ZX9Page";
 import ZX7Page from "./pages/ZX7Page";
 import YX1Page from "./pages/YX1Page";
 import { CartProvider } from "./Context/CartContext";
+import CheckOutPage from "./pages/CheckOutPage";
 function App() {
   return (
     <CartProvider>
@@ -40,6 +41,7 @@ function App() {
 
           <Route path="speakers" element={<Speakers />} />
           <Route path="earphones" element={<Earphones />} />
+          <Route path="checkout" element={<CheckOutPage />} />
         </Routes>
         <Footer />
       </BrowserRouter>
