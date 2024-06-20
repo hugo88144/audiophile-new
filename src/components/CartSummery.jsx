@@ -11,6 +11,25 @@ function CartSummery() {
     return total.toLocaleString(); // This will format the number with commas
   };
 
+  const calculateVAT = () => {
+    const total = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    const vat = total * 0.2;
+    return vat.toLocaleString();
+  };
+
+  const calculateGrandTotal = () => {
+    const total = cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
+    const vat = total * 0.2;
+    const grandTotal = total + vat;
+    return grandTotal.toLocaleString();
+  };
+
   return (
     <div className="summary">
       <div className="summary__header">
@@ -62,12 +81,14 @@ function CartSummery() {
 
         <div className="summary__Total">
           <div className="summary__Total-title">VAT(INCLUDED)</div>
-          <div className="summary__Total-price">$50</div>
+          <div className="summary__Total-price">${calculateVAT()}</div>
         </div>
 
         <div className="summary__Total">
           <div className="summary__Total-title">GRAND TOTAL</div>
-          <div className="summary__Total-price">$50</div>
+          <div className="summary__Total-price summary__Total-price-grand">
+            ${calculateGrandTotal()}
+          </div>
         </div>
       </div>
 

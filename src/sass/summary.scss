@@ -99,6 +99,9 @@
       color: #000;
 
       letter-spacing: 0.1rem;
+      &-grand {
+        color: $color-primary;
+      }
     }
   }
   &__btn {
