@@ -21,7 +21,7 @@ function XX59Page() {
       <GoBack />
 
       <XX59>
-        <AddToCart price="899" />
+        <AddToCart price="899" productName={"XX59 Headphones"} />
       </XX59>
 
       <XX59Features />

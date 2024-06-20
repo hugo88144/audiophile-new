@@ -21,7 +21,7 @@ function XX59({ children }) {
         ) : (
           <BtnSee
             className="content2__btn-see"
-            link="/headphones/xx99-mark-two-headphones"
+            link="/headphones/xx59-headphones"
           />
         )}
       </div>
