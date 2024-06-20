@@ -22,10 +22,11 @@ function Cart() {
 
   // Calculate the total price of all items in the cart
   const calculateTotal = () => {
-    return cartItems.reduce(
+    const total = cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
+    return total.toLocaleString(); // This will format the number with commas
   };
 
   return (
@@ -52,7 +53,9 @@ function Cart() {
                 />
                 <div className="cart__content-info">
                   <div className="cart__content-title">{item.productName}</div>
-                  <div className="cart__content-price">$ {item.price}</div>
+                  <div className="cart__content-price">
+                    $ {item.price.toLocaleString()}
+                  </div>
                 </div>
                 <BtnCounter
                   productName={item.productName}

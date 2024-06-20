@@ -20,7 +20,7 @@ function XX99I() {
       <NavBar />
       <GoBack />
       <XX99MARKI>
-        <AddToCart price="1,750" productName={"XX99 Mark I Headphones"} />
+        <AddToCart price="1,750" productName={"XX99 Mark I"} />
       </XX99MARKI>
       <XX99IFeatures />
 

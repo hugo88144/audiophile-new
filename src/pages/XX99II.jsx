@@ -23,7 +23,7 @@ function XX99II() {
       <NavBar />
       <GoBack />
       <XX99MARKII>
-        <AddToCart price="2,999" productName={"XX99 Mark II Headphones"} />
+        <AddToCart price="2,999" productName={"XX99 Mark II"} />
       </XX99MARKII>
       <XX99IIFeatures />
       <XX99IIImgs />

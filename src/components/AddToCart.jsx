@@ -13,8 +13,8 @@ import YX1 from "../assets/cart/image-yx1-earphones.jpg";
 
 // Mapping product names to their corresponding image URLs
 const imageMap = {
-  "XX99 Mark II Headphones": XX99II,
-  "XX99 Mark I Headphones": XX99I,
+  "XX99 Mark II": XX99II,
+  "XX99 Mark I": XX99I,
   "XX59 Headphones": XX59,
   "ZX9 Speaker": ZX9,
   "ZX7 Speaker": ZX7,

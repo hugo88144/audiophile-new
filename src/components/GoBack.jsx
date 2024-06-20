@@ -8,15 +8,7 @@ function GoBack() {
   };
 
   return (
-    <div
-      onClick={handleGoBack}
-      style={{
-        cursor: "pointer",
-        color: "grey",
-        fontSize: "1.7rem",
-        padding: "  15rem 0   0 20%",
-      }}
-    >
+    <div className="goBack-btn" onClick={handleGoBack}>
       Go back
     </div>
   );

@@ -1,0 +1,9 @@
+.goBack-btn {
+  cursor: pointer;
+  color: grey;
+  font-size: 1.7rem;
+  padding: 15rem 0 0 20%;
+  &:hover {
+    color: $color-primary;
+  }
+}
