@@ -1,7 +1,7 @@
 import { useCart } from "../Context/CartContext";
 
 function CartSummery() {
-  const { dispatch, cartItems } = useCart();
+  const { cartItems } = useCart();
 
   const calculateTotal = () => {
     const total = cartItems.reduce(

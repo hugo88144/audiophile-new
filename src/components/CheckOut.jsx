@@ -1,7 +1,17 @@
+import { useState } from "react";
 import CartSummery from "./CartSummery";
 import GoBack from "./GoBack";
 
+import iconCash from "../assets/checkout/icon-cash-on-delivery.svg";
+import iconCreditCard from "../assets/checkout/icon-order-confirmation.svg";
+
 function CheckOut() {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleClick = () => {
+    setIsActive(!isActive);
+  };
+
   return (
     <>
       <div className="goBack">
@@ -61,23 +71,47 @@ function CheckOut() {
               <label>Payment Method</label>
 
               <div className="checkout__PaymentDetails-Container-method-options-input">
-                <input type="radio" id="e-money" value="e-money" checked />
+                <input
+                  type="radio"
+                  id="e-money"
+                  value="e-money"
+                  onClick={handleClick}
+                  checked={isActive}
+                />
                 <label>e-Money</label>
               </div>
               <div className="checkout__PaymentDetails-Container-method-options-input">
-                <input type="radio" />
+                <input
+                  type="radio"
+                  value="cash-on-delivery"
+                  onClick={handleClick}
+                  checked={!isActive}
+                />
                 <label>Cash on Delivery</label>
               </div>
 
-              <div className="checkout__PaymentDetails-Container-number">
-                <label>e-Money Number</label>
-                <input type="text" placeholder="238521993" />
-              </div>
-
-              <div className="checkout__PaymentDetails-Container-pin">
-                <label>e-Money PIN</label>
-                <input type="text" placeholder="6891" />
-              </div>
+              {isActive ? (
+                <>
+                  <div className="checkout__PaymentDetails-Container-number">
+                    <label>e-Money Number</label>
+                    <input type="text" placeholder="238521993" />
+                  </div>
+                  <div className="checkout__PaymentDetails-Container-pin">
+                    <label>e-Money PIN</label>
+                    <input type="text" placeholder="6891" />
+                  </div>
+                </>
+              ) : (
+                <div className="cash">
+                  <img src={iconCash} className="cash__icon" />
+                  <p className="cash__text">
+                    The ‘Cash on Delivery’ option enables you to pay in cash
+                    when our delivery courier arrives at your residence. Just
+                    make sure your address is correct so that your order will
+                    not be cancelled.
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
