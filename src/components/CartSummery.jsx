@@ -92,7 +92,9 @@ function CartSummery() {
         </div>
       </div>
 
-      <button className="summary__btn">CONTINUE & PAY</button>
+      <button type="submit" className="summary__btn">
+        CONTINUE & PAY
+      </button>
     </div>
   );
 }

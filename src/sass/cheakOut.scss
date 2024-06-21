@@ -139,3 +139,42 @@
     font-size: 1.5rem;
   }
 }
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.input-container label {
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  color: #999;
+  font-size: 16px;
+  pointer-events: none;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.input-container.focused label,
+.input-container input:not(:placeholder-shown) + label {
+  top: 6px;
+  font-size: 12px;
+  color: #f44336; /* Red color for label when input is focused or has content */
+}
+
+.input-container.focused input {
+  border-color: #f44336; /* Red border color when input is focused */
+}
+
+.form {
+  display: flex;
+  gap: 4rem;
+}
