@@ -1,11 +1,14 @@
 import { useState } from "react";
 import CartSummery from "./CartSummery";
 import GoBack from "./GoBack";
-
 import iconCash from "../assets/checkout/icon-cash-on-delivery.svg";
+import Confirmation from "./Confirmation";
 
 function CheckOut() {
-  // Initialize state for form data and validation errors
+  // State to track if the confirmation component should be shown
+  const [isConfirmation, setIsConfirmation] = useState(false);
+
+  // State to track the form data
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,6 +22,7 @@ function CheckOut() {
     eMoneyPIN: "",
   });
 
+  // State to track validation errors for the form fields
   const [validationErrors, setValidationErrors] = useState({
     name: false,
     email: false,
@@ -31,7 +35,7 @@ function CheckOut() {
     eMoneyPIN: false,
   });
 
-  // Handle changes to the payment method
+  // Handle changes to the payment method select input
   const handlePaymentChange = (event) => {
     setFormData({
       ...formData,
@@ -39,54 +43,60 @@ function CheckOut() {
     });
   };
 
-  // Handle form submission and validate inputs
+  // Handle confirmation button click
+  const handleConfirmation = () => {
+    setIsConfirmation(true); // Set the state to show the confirmation component
+  };
+
+  // Handle form submission
   const handleFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Prevent the default form submission behavior
 
     // Validate email for the presence of "@"
     const emailValid = formData.email.includes("@");
 
-    // Validate phone number against UK phone number format using regex
+    // Validate phone number using a regex pattern
     const phoneNumberValid =
       /^[+]*[0-9]{1,4}[ ]?[(]?[0-9]{1,3}[)]?[0-9 ]{5,10}$/.test(
         formData.phoneNumber
       );
 
-    // Create a new object to track validation errors
+    // Create a new object to track validation errors for each field
     const newValidationErrors = {
-      name: !formData.name,
-      email: !emailValid,
-      phoneNumber: !phoneNumberValid,
-      address: !formData.address,
-      zipCode: !formData.zipCode,
-      city: !formData.city,
-      country: !formData.country,
+      name: !formData.name, // Name should not be empty
+      email: !emailValid, // Email should include "@"
+      phoneNumber: !phoneNumberValid, // Phone number should match the regex pattern
+      address: !formData.address, // Address should not be empty
+      zipCode: !formData.zipCode, // Zip code should not be empty
+      city: !formData.city, // City should not be empty
+      country: !formData.country, // Country should not be empty
       eMoneyNumber:
-        formData.paymentMethod === "e-money" && !formData.eMoneyNumber,
-      eMoneyPIN: formData.paymentMethod === "e-money" && !formData.eMoneyPIN,
+        formData.paymentMethod === "e-money" && !formData.eMoneyNumber, // eMoneyNumber is required if payment method is e-money
+      eMoneyPIN: formData.paymentMethod === "e-money" && !formData.eMoneyPIN, // eMoneyPIN is required if payment method is e-money
     };
 
     // Update the validation errors state
     setValidationErrors(newValidationErrors);
 
-    // Check if any errors exist, if so, do not proceed with form submission
-    if (Object.values(newValidationErrors).some((error) => error)) {
-      console.log("Form has errors");
-      return;
-    }
+    // Check if any errors exist by looking for any true value in the newValidationErrors object
+    const hasErrors = Object.values(newValidationErrors).some((error) => error);
 
-    // Log the form data if no errors are found
-    console.log("Form submitted with data:", formData);
+    // If there are no errors, proceed with confirmation
+    if (!hasErrors) {
+      handleConfirmation(); // Call handleConfirmation if the form has no errors
+    }
   };
 
   // Handle changes to input fields
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target; // Destructure name and value from the event target
+
     // Update the form data state with new values
     setFormData({
       ...formData,
       [name]: value,
     });
+
     // Reset the validation error for the changed field
     setValidationErrors({
       ...validationErrors,
@@ -339,6 +349,8 @@ function CheckOut() {
           <CartSummery />
         </form>
       </div>
+
+      {isConfirmation && <Confirmation />}
     </>
   );
 }

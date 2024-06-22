@@ -1,0 +1,153 @@
+.overlayConfirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 6rem;
+  position: relative;
+  background-color: #fff;
+  width: 54rem;
+  height: 71rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+
+  &__box {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    width: 44.4rem;
+    height: 27rem;
+
+    &-cart {
+      width: 100%;
+      margin-bottom: 1rem;
+
+      &-items {
+        width: 19.8rem;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+      }
+    }
+
+    &-total {
+      display: flex;
+      justify-content: end;
+      align-items: self-start;
+      padding: 2rem;
+
+      flex-direction: column;
+      height: 27rem;
+      width: 27rem;
+
+      background-color: $color-black;
+
+      &-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: $color-light-gray;
+      }
+
+      &-price {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d87d4a;
+    color: #fff;
+
+    font-weight: 600;
+    width: 100%;
+    padding: 2.4rem;
+
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &__image {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+
+  &__details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__price {
+    font-size: 1.25rem;
+    color: #666;
+  }
+
+  &__quantity {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: auto;
+}
