@@ -3,42 +3,95 @@ import CartSummery from "./CartSummery";
 import GoBack from "./GoBack";
 
 import iconCash from "../assets/checkout/icon-cash-on-delivery.svg";
-// import iconCreditCard from "../assets/checkout/icon-order-confirmation.svg";
 
 function CheckOut() {
-  const [paymentMethod, setPaymentMethod] = useState("e-money");
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [address, setAddress] = useState("");
-  const [zipCode, setZipCode] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
-  const [isNameInvalid, setIsNameInvalid] = useState(false);
+  // Initialize state for form data and validation errors
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phoneNumber: "",
+    address: "",
+    zipCode: "",
+    city: "",
+    country: "",
+    paymentMethod: "e-money",
+    eMoneyNumber: "",
+    eMoneyPIN: "",
+  });
 
+  const [validationErrors, setValidationErrors] = useState({
+    name: false,
+    email: false,
+    phoneNumber: false,
+    address: false,
+    zipCode: false,
+    city: false,
+    country: false,
+    eMoneyNumber: false,
+    eMoneyPIN: false,
+  });
+
+  // Handle changes to the payment method
   const handlePaymentChange = (event) => {
-    setPaymentMethod(event.target.value);
+    setFormData({
+      ...formData,
+      paymentMethod: event.target.value,
+    });
   };
 
+  // Handle form submission and validate inputs
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    if (!name) {
-      console.log("Name field is empty");
-      setIsNameInvalid(true);
+    // Validate email for the presence of "@"
+    const emailValid = formData.email.includes("@");
+
+    // Validate phone number against UK phone number format using regex
+    const phoneNumberValid =
+      /^[+]*[0-9]{1,4}[ ]?[(]?[0-9]{1,3}[)]?[0-9 ]{5,10}$/.test(
+        formData.phoneNumber
+      );
+
+    // Create a new object to track validation errors
+    const newValidationErrors = {
+      name: !formData.name,
+      email: !emailValid,
+      phoneNumber: !phoneNumberValid,
+      address: !formData.address,
+      zipCode: !formData.zipCode,
+      city: !formData.city,
+      country: !formData.country,
+      eMoneyNumber:
+        formData.paymentMethod === "e-money" && !formData.eMoneyNumber,
+      eMoneyPIN: formData.paymentMethod === "e-money" && !formData.eMoneyPIN,
+    };
+
+    // Update the validation errors state
+    setValidationErrors(newValidationErrors);
+
+    // Check if any errors exist, if so, do not proceed with form submission
+    if (Object.values(newValidationErrors).some((error) => error)) {
+      console.log("Form has errors");
       return;
     }
-    const formData = {
-      name,
-      email,
-      phoneNumber,
-      address,
-      zipCode,
-      city,
-      country,
-      paymentMethod,
-    };
+
+    // Log the form data if no errors are found
     console.log("Form submitted with data:", formData);
+  };
+
+  // Handle changes to input fields
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    // Update the form data state with new values
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+    // Reset the validation error for the changed field
+    setValidationErrors({
+      ...validationErrors,
+      [name]: false,
+    });
   };
 
   return (
@@ -57,31 +110,64 @@ function CheckOut() {
               </div>
               <div className="checkout__BillingDetails-Container">
                 <div className="checkout__BillingDetails-Container-name">
-                  <label>Name</label>
+                  {/* Display error message if validation fails for name */}
+                  <label className="">
+                    Name{" "}
+                    {validationErrors.name && (
+                      <span>This field is required</span>
+                    )}
+                  </label>
                   <input
                     type="text"
                     placeholder="Alexei Ward"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className={isNameInvalid ? "input-invalid" : ""}
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className={validationErrors.name ? "inputInvalid" : ""}
                   />
                 </div>
                 <div className="checkout__BillingDetails-Container-email">
-                  <label>Email Address</label>
+                  {/* Display error message if validation fails for email */}
+                  <label>
+                    Email Address{" "}
+                    {validationErrors.email && (
+                      <span>
+                        {formData.email
+                          ? "wrong email format"
+                          : "This field is required"}
+                      </span>
+                    )}
+                  </label>
                   <input
                     type="text"
                     placeholder="alexei@mail.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={validationErrors.email ? "inputInvalid" : ""}
                   />
                 </div>
                 <div className="checkout__BillingDetails-Container-phone">
-                  <label>Phone Number</label>
+                  {/* Display error message if validation fails for phone number */}
+                  <label>
+                    Phone Number{" "}
+                    {validationErrors.phoneNumber && (
+                      <span>
+                        {formData.phoneNumber
+                          ? "Invalid UK phone format"
+                          : "This field is required"}
+                      </span>
+                    )}
+                  </label>
                   <input
                     type="text"
-                    placeholder="+1 202-555-0136"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    placeholder="+44 20 1234 5678"
+                    name="phoneNumber"
+                    value={formData.phoneNumber}
+                    onChange={handleInputChange}
+                    className={
+                      validationErrors.phoneNumber ? "inputInvalid" : ""
+                    }
                   />
                 </div>
               </div>
@@ -91,39 +177,71 @@ function CheckOut() {
               <div className="checkout__ShippingInfo-title">SHIPPING INFO</div>
               <div className="checkout__ShippingInfo-Container">
                 <div className="checkout__ShippingInfo-Container-address">
-                  <label>Address</label>
+                  {/* Display error message if validation fails for address */}
+                  <label>
+                    Address{" "}
+                    {validationErrors.address && (
+                      <span>This field is required</span>
+                    )}
+                  </label>
                   <input
                     type="text"
                     placeholder="1137 Williams Avenue"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
+                    name="address"
+                    value={formData.address}
+                    onChange={handleInputChange}
+                    className={validationErrors.address ? "inputInvalid" : ""}
                   />
                 </div>
                 <div className="checkout__ShippingInfo-Container-zipcode">
-                  <label>Zip Code</label>
+                  {/* Display error message if validation fails for zip code */}
+                  <label>
+                    Zip Code{" "}
+                    {validationErrors.zipCode && (
+                      <span>This field is required</span>
+                    )}
+                  </label>
                   <input
                     type="text"
                     placeholder="10001"
-                    value={zipCode}
-                    onChange={(e) => setZipCode(e.target.value)}
+                    name="zipCode"
+                    value={formData.zipCode}
+                    onChange={handleInputChange}
+                    className={validationErrors.zipCode ? "inputInvalid" : ""}
                   />
                 </div>
                 <div className="checkout__ShippingInfo-Container-city">
-                  <label>City</label>
+                  {/* Display error message if validation fails for city */}
+                  <label>
+                    City{" "}
+                    {validationErrors.city && (
+                      <span>This field is required</span>
+                    )}
+                  </label>
                   <input
                     type="text"
                     placeholder="New York"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
+                    name="city"
+                    value={formData.city}
+                    onChange={handleInputChange}
+                    className={validationErrors.city ? "inputInvalid" : ""}
                   />
                 </div>
                 <div className="checkout__ShippingInfo-Container-country">
-                  <label>Country</label>
+                  {/* Display error message if validation fails for country */}
+                  <label>
+                    Country{" "}
+                    {validationErrors.country && (
+                      <span>This field is required</span>
+                    )}
+                  </label>
                   <input
                     type="text"
                     placeholder="United States"
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)}
+                    name="country"
+                    value={formData.country}
+                    onChange={handleInputChange}
+                    className={validationErrors.country ? "inputInvalid" : ""}
                   />
                 </div>
               </div>
@@ -141,8 +259,9 @@ function CheckOut() {
                     type="radio"
                     id="e-money"
                     value="e-money"
+                    name="paymentMethod"
                     onChange={handlePaymentChange}
-                    checked={paymentMethod === "e-money"}
+                    checked={formData.paymentMethod === "e-money"}
                   />
                   <label htmlFor="e-money">e-Money</label>
                 </div>
@@ -151,21 +270,52 @@ function CheckOut() {
                     type="radio"
                     id="cash-on-delivery"
                     value="cash-on-delivery"
+                    name="paymentMethod"
                     onChange={handlePaymentChange}
-                    checked={paymentMethod === "cash-on-delivery"}
+                    checked={formData.paymentMethod === "cash-on-delivery"}
                   />
                   <label htmlFor="cash-on-delivery">Cash on Delivery</label>
                 </div>
 
-                {paymentMethod === "e-money" ? (
+                {formData.paymentMethod === "e-money" ? (
                   <>
                     <div className="checkout__PaymentDetails-Container-number">
-                      <label>e-Money Number</label>
-                      <input type="text" placeholder="238521993" />
+                      {/* Display error message if validation fails for eMoney number */}
+                      <label>
+                        e-Money Number{" "}
+                        {validationErrors.eMoneyNumber && (
+                          <span>This field is required</span>
+                        )}
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="238521993"
+                        name="eMoneyNumber"
+                        value={formData.eMoneyNumber}
+                        onChange={handleInputChange}
+                        className={
+                          validationErrors.eMoneyNumber ? "inputInvalid" : ""
+                        }
+                      />
                     </div>
                     <div className="checkout__PaymentDetails-Container-pin">
-                      <label>e-Money PIN</label>
-                      <input type="text" placeholder="6891" />
+                      {/* Display error message if validation fails for eMoney PIN */}
+                      <label>
+                        e-Money PIN{" "}
+                        {validationErrors.eMoneyPIN && (
+                          <span>This field is required</span>
+                        )}
+                      </label>
+                      <input
+                        type="text"
+                        placeholder="6891"
+                        name="eMoneyPIN"
+                        value={formData.eMoneyPIN}
+                        onChange={handleInputChange}
+                        className={
+                          validationErrors.eMoneyPIN ? "inputInvalid" : ""
+                        }
+                      />
                     </div>
                   </>
                 ) : (
