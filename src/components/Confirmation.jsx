@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
 import iconOrderConfirmation from "../assets/checkout/icon-order-confirmation.svg";
 
 function Confirmation() {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // This navigates back one page in the history stack
+  };
   const { cartItems } = useCart();
 
   const calculateGrandTotal = () => {
@@ -20,7 +26,9 @@ function Confirmation() {
     <div className="overlayConfirmation">
       <div className="confirmation">
         <img src={iconOrderConfirmation} className="confirmation__icon" />
-        <div className="confirmation__title">THANK YOU FOR YOUR ORDER</div>
+        <div className="confirmation__title">
+          THANK YOU FOR <br /> YOUR ORDER
+        </div>
         <div className="confirmation__description">
           You will receive an email confirmation shortly.
         </div>
@@ -53,7 +61,9 @@ function Confirmation() {
             </div>
           </div>
         </div>
-        <button className="confirmation__btn">BACK TO HOME</button>
+        <button className="confirmation__btn" onClick={handleGoBack}>
+          BACK TO HOME
+        </button>
       </div>
     </div>
   );
