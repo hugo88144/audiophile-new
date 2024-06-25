@@ -6,10 +6,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-html {
-  font-size: 62.5%;
-  font-family: "Manrope", sans-serif;
-}
 
 // Variables
 $color-primary: #d87d4a;
@@ -90,3 +86,12 @@ $breakpoint-desktop-large: 1600px;
 @import "./goBack";
 @import "./cheakOut";
 @import "./confirmation";
+
+html {
+  font-size: 62.5%;
+  font-family: "Manrope", sans-serif;
+
+  @include respond-to(desktop-large) {
+    font-size: 50%;
+  }
+}

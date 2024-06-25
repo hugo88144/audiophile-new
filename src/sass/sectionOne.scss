@@ -9,36 +9,13 @@
   background-position: center;
   height: 75vh;
   gap: 7rem;
-  @include respond-to(mobile-small) {
-    color: lightblue;
-  }
-
-  @include respond-to(mobile-medium) {
-    color: pink;
-  }
-
-  @include respond-to(mobile-large) {
-    color: purple;
-  }
 
   @include respond-to(tablet-small) {
-    color: green;
+    align-items: center;
+    background-image: url("../assets/home/tablet/image-header.jpg");
   }
 
-  @include respond-to(tablet-medium) {
-    color: orange;
-  }
-
-  @include respond-to(tablet-large) {
-    color: brown;
-  }
-
-  @include respond-to(desktop-small) {
-    color: red;
-  }
-
-  @include respond-to(desktop-medium) {
-    color: yellow;
+  @include respond-to(desktop-large) {
   }
 }
 
@@ -78,6 +55,11 @@
   gap: 3rem;
   padding-top: 20rem;
   margin-left: 20%;
+  @include respond-to(tablet-small) {
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+  }
 
   &__new {
     font-weight: 400;
@@ -92,9 +74,6 @@
     font-size: 5rem;
     text-transform: uppercase;
     line-height: 6rem;
-    @include respond-to(desktop-large) {
-      font-size: 5rem;
-    }
   }
 
   &__description {
