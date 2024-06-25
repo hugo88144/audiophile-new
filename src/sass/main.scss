@@ -1,3 +1,6 @@
+// main.scss
+
+// Global Styles
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +11,7 @@ html {
   font-family: "Manrope", sans-serif;
 }
 
+// Variables
 $color-primary: #d87d4a;
 $color-dark: #191919;
 $color-light-gray: #f1f1f1;
@@ -16,26 +20,17 @@ $color-accent: #fbaf85;
 $color-white: #ffffff;
 $color-black: #000000;
 
-@import "./sectionOne.scss";
-@import "./audioProducts.scss";
-@import "./audioProductsV2.scss";
-@import "./sectionTwo.scss";
-@import "./productCard.scss";
-@import "./footer.scss";
-@import "./header.scss";
-@import "./XX99MARKII.scss";
-@import "./XX99MARKI.scss";
-@import "./XX59.scss";
-@import "./features.scss";
-@import "./gallery.scss";
-@import "./addToCart.scss";
-@import "./cart.scss";
-@import "./summary.scss";
-@import "./goBack.scss";
-@import "./cheakOut.scss";
-@import "./confirmation.scss";
+$breakpoint-mobile-small: 320px;
+$breakpoint-mobile-medium: 480px;
+$breakpoint-mobile-large: 600px;
+$breakpoint-tablet-small: 768px;
+$breakpoint-tablet-medium: 900px;
+$breakpoint-tablet-large: 1024px;
+$breakpoint-desktop-small: 1200px;
+$breakpoint-desktop-medium: 1440px;
+$breakpoint-desktop-large: 1600px;
 
-// _mixins.scss
+// Mixins
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile-small {
     @media (max-width: $breakpoint-mobile-small) {
@@ -76,13 +71,22 @@ $color-black: #000000;
   }
 }
 
-// _variables.scss
-$breakpoint-mobile-small: 320px;
-$breakpoint-mobile-medium: 480px;
-$breakpoint-mobile-large: 600px;
-$breakpoint-tablet-small: 768px;
-$breakpoint-tablet-medium: 900px;
-$breakpoint-tablet-large: 1024px;
-$breakpoint-desktop-small: 1200px;
-$breakpoint-desktop-medium: 1440px;
-$breakpoint-desktop-large: 1600px;
+// Import Other SCSS Files
+@import "./sectionOne";
+@import "./audioProducts";
+@import "./audioProductsV2";
+@import "./sectionTwo";
+@import "./productCard";
+@import "./footer";
+@import "./header";
+@import "./XX99MARKII";
+@import "./XX99MARKI";
+@import "./XX59";
+@import "./features";
+@import "./gallery";
+@import "./addToCart";
+@import "./cart";
+@import "./summary";
+@import "./goBack";
+@import "./cheakOut";
+@import "./confirmation";

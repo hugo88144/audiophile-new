@@ -5,11 +5,41 @@
   background-color: $color-dark;
   background-image: url("../assets/home/desktop/image-hero.jpg");
   background-repeat: no-repeat;
-  background-size: auto; /* Adjusted to display the image at its original size */
+  background-size: contain; /* Adjusted to display the image at its original size */
   background-position: center;
   height: 75vh;
-
   gap: 7rem;
+  @include respond-to(mobile-small) {
+    color: lightblue;
+  }
+
+  @include respond-to(mobile-medium) {
+    color: pink;
+  }
+
+  @include respond-to(mobile-large) {
+    color: purple;
+  }
+
+  @include respond-to(tablet-small) {
+    color: green;
+  }
+
+  @include respond-to(tablet-medium) {
+    color: orange;
+  }
+
+  @include respond-to(tablet-large) {
+    color: brown;
+  }
+
+  @include respond-to(desktop-small) {
+    color: red;
+  }
+
+  @include respond-to(desktop-medium) {
+    color: yellow;
+  }
 }
 
 .nav {
@@ -62,40 +92,8 @@
     font-size: 5rem;
     text-transform: uppercase;
     line-height: 6rem;
-    @include respond-to(mobile-small) {
-      color: lightblue;
-    }
-
-    @include respond-to(mobile-medium) {
-      color: pink;
-    }
-
-    @include respond-to(mobile-large) {
-      color: purple;
-    }
-
-    @include respond-to(tablet-small) {
-      color: green;
-    }
-
-    @include respond-to(tablet-medium) {
-      color: orange;
-    }
-
-    @include respond-to(tablet-large) {
-      color: brown;
-    }
-
-    @include respond-to(desktop-small) {
-      color: red;
-    }
-
-    @include respond-to(desktop-medium) {
-      color: yellow;
-    }
-
     @include respond-to(desktop-large) {
-      color: black;
+      font-size: 5rem;
     }
   }
 
