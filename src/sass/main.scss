@@ -34,3 +34,55 @@ $color-black: #000000;
 @import "./goBack.scss";
 @import "./cheakOut.scss";
 @import "./confirmation.scss";
+
+// _mixins.scss
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile-small {
+    @media (max-width: $breakpoint-mobile-small) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-medium {
+    @media (max-width: $breakpoint-mobile-medium) {
+      @content;
+    }
+  } @else if $breakpoint == mobile-large {
+    @media (max-width: $breakpoint-mobile-large) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-small {
+    @media (max-width: $breakpoint-tablet-small) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-medium {
+    @media (max-width: $breakpoint-tablet-medium) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-large {
+    @media (max-width: $breakpoint-tablet-large) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-small {
+    @media (max-width: $breakpoint-desktop-small) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-medium {
+    @media (max-width: $breakpoint-desktop-medium) {
+      @content;
+    }
+  } @else if $breakpoint == desktop-large {
+    @media (max-width: $breakpoint-desktop-large) {
+      @content;
+    }
+  }
+}
+
+// _variables.scss
+$breakpoint-mobile-small: 320px;
+$breakpoint-mobile-medium: 480px;
+$breakpoint-mobile-large: 600px;
+$breakpoint-tablet-small: 768px;
+$breakpoint-tablet-medium: 900px;
+$breakpoint-tablet-large: 1024px;
+$breakpoint-desktop-small: 1200px;
+$breakpoint-desktop-medium: 1440px;
+$breakpoint-desktop-large: 1600px;

@@ -1,13 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
 import iconOrderConfirmation from "../assets/checkout/icon-order-confirmation.svg";
+import { useState } from "react";
 
 function Confirmation() {
-  const navigate = useNavigate();
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const handleGoBack = () => {
-    navigate(-1); // This navigates back one page in the history stack
-  };
   const { cartItems } = useCart();
 
   const calculateGrandTotal = () => {
@@ -34,7 +32,11 @@ function Confirmation() {
         </div>
         <div className="confirmation__box">
           <div className="confirmation__box-cart">
-            <div className="confirmation__box-cart-items">
+            <div
+              className={`confirmation__box-cart-items ${
+                isCollapsed ? "collapsed" : null
+              }`}
+            >
               {cartItems.map((item, index) => (
                 <div key={index} className="cart-item">
                   <img
@@ -52,7 +54,12 @@ function Confirmation() {
                 </div>
               ))}
             </div>
-            <button className="view-toggle">view less</button>
+            <button
+              className="view-toggle"
+              onClick={() => setIsCollapsed(!isCollapsed)}
+            >
+              {isCollapsed ? "View More" : "View Less "}
+            </button>
           </div>
           <div className="confirmation__box-total">
             <div className="confirmation__box-total-title">GRAND TOTAL</div>
@@ -61,9 +68,9 @@ function Confirmation() {
             </div>
           </div>
         </div>
-        <button className="confirmation__btn" onClick={handleGoBack}>
-          BACK TO HOME
-        </button>
+        <Link to="/">
+          <button className="confirmation__btn">BACK TO HOME</button>
+        </Link>
       </div>
     </div>
   );
