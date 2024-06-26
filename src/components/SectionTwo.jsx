@@ -30,8 +30,10 @@ function SectionTwo() {
         </div>
 
         <div className="sectionTwo__box-4">
-          <div className="sectionTwo__title-3">YX1 EARPHONES</div>
-          <BtnSee className="sectionTwo__btn-2" />
+          <div>
+            <div className="sectionTwo__title-3">YX1 EARPHONES</div>
+            <BtnSee className="sectionTwo__btn-2" />
+          </div>
         </div>
       </div>
     </div>

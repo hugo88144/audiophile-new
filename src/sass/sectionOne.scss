@@ -14,8 +14,9 @@
     align-items: center;
     background-image: url("../assets/home/tablet/image-header.jpg");
   }
-
-  @include respond-to(desktop-large) {
+  @include respond-to(mobile-small) {
+    align-items: center;
+    background-image: url("../assets/home/mobile/image-header.jpg");
   }
 }
 
@@ -33,7 +34,14 @@
   top: 0; /* Stick to the top of the viewport */
   background-color: $color-dark; /* Ensure the background color remains the same */
   z-index: 300; /* Ensure it stays on top of other content */
-  @include respond-to(tablet-small) {
+  @include respond-to(tablet-medium) {
+    .gone {
+      display: none;
+      justify-content: space-between;
+    }
+
+    padding: 0 4rem;
+    justify-content: space-between;
   }
 
   &-link {

@@ -1,4 +1,4 @@
-import productCardImg from "../assets/shared/desktop/image-best-gear.jpg";
+// Ensure this points to your SCSS file
 
 function ProductCard() {
   return (
@@ -17,7 +17,7 @@ function ProductCard() {
         </p>
       </div>
       <div className="productCard__imgBox">
-        <img src={productCardImg} className="productCard__imgBox-img" />
+        <div className="productCard__imgBox-img"></div>
       </div>
     </div>
   );

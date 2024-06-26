@@ -5,6 +5,10 @@
   gap: 5rem;
   width: 100%;
   padding: 0rem 20% 15rem 20%;
+  @include respond-to(mobile-small) {
+    padding: 0rem 5% 15rem 5%;
+  }
+
   &__box {
     width: 100%;
     display: flex;
@@ -127,20 +131,24 @@
     height: 32rem;
   }
   &__box-4 {
-    border-radius: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
     gap: 2rem;
-    width: 54rem;
+    width: 100%;
     background-color: $color-light-gray;
-    padding: 9rem 0rem 0rem 8rem;
+
     box-shadow: 3px 6px 5px 0px rgba(130, 128, 130, 0.68);
   }
 
   &__imgbox {
     &-4 {
       border-radius: 10px;
-      width: 54rem;
+      width: 100%;
       height: auto;
     }
   }
