@@ -2,11 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
   width: 111rem;
   height: 58rem;
   margin: 2rem auto 20rem auto;
+  @include respond-to(tablet-small) {
+    flex-direction: column-reverse;
+  }
   &__text {
     display: flex;
     flex-direction: column;

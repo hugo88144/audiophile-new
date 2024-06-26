@@ -8,16 +8,16 @@ function NavBar() {
     <nav className="nav">
       <img className="nav-link" src={logo} alt="Logo" />
 
-      <Link to="/" className="nav-link">
+      <Link to="/" className="nav-link gone">
         HOME
       </Link>
-      <Link to="/headphones" className="nav-link">
+      <Link to="/headphones" className="nav-link gone">
         HEADPHONES
       </Link>
-      <Link to="/speakers" className="nav-link">
+      <Link to="/speakers" className="nav-link gone">
         SPEAKERS
       </Link>
-      <Link to="/earphones" className="nav-link">
+      <Link to="/earphones" className="nav-link gone">
         EARPHONES
       </Link>
       <Basket />

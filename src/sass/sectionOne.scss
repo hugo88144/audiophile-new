@@ -33,6 +33,8 @@
   top: 0; /* Stick to the top of the viewport */
   background-color: $color-dark; /* Ensure the background color remains the same */
   z-index: 300; /* Ensure it stays on top of other content */
+  @include respond-to(tablet-small) {
+  }
 
   &-link {
     font-weight: 600;

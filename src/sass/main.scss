@@ -88,10 +88,41 @@ $breakpoint-desktop-large: 1600px;
 @import "./confirmation";
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // Base font size for normal screens
   font-family: "Manrope", sans-serif;
-
   @include respond-to(desktop-large) {
+    font-size: 55%;
+  }
+
+  @include respond-to(desktop-medium) {
+    font-size: 52.5%;
+  }
+
+  @include respond-to(desktop-small) {
     font-size: 50%;
+  }
+
+  @include respond-to(tablet-large) {
+    font-size: 47.5%;
+  }
+
+  @include respond-to(tablet-medium) {
+    font-size: 45%;
+  }
+
+  @include respond-to(tablet-small) {
+    font-size: 42.5%;
+  }
+
+  @include respond-to(mobile-large) {
+    font-size: 40%;
+  }
+
+  @include respond-to(mobile-medium) {
+    font-size: 37.5%;
+  }
+
+  @include respond-to(mobile-small) {
+    font-size: 35%; // Smallest font size
   }
 }
