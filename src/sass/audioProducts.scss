@@ -11,7 +11,7 @@
   }
   @include respond-to(mobile-large) {
     flex-direction: column;
-    padding: 15rem 10%;
+    padding: 20rem 10%;
     gap: 20rem;
   }
 
@@ -52,7 +52,8 @@
       top: -100px;
     }
     @include respond-to(mobile-medium) {
-      max-width: 45%;
+      max-width: 50%;
+      top: -70px;
     }
   }
   &__title {
