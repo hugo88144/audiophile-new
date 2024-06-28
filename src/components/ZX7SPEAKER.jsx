@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import ZX7SPEAKERCardImg from "../assets/product-zx7-speaker/desktop/image-category-page-preview.jpg";
+
 import BtnSee from "./BtnSee";
 function ZX7SPEAKER({ children }) {
   return (

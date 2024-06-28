@@ -2,9 +2,9 @@ import XX59Img from "../assets/product-xx59-headphones/desktop/image-category-pa
 import BtnSee from "./BtnSee";
 function XX59({ children }) {
   return (
-    <div className="XX59">
-      <div className="XX59__imgBox">
-        <img src={XX59Img} className="XX59__imgBox-img" />
+    <div className="XX99MARKIICard">
+      <div className="XX99MARKIICard__imgBox">
+        <img src={XX59Img} className="XX99MARKIICard__imgBox-img" />
       </div>
       <div className="content2">
         <div className="content2__title">

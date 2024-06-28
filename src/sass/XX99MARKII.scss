@@ -5,15 +5,27 @@
   color: $color-white;
 
   gap: 15rem;
-  padding: 5rem 20% 10rem 20%;
+  padding: 5rem 5% 10rem 5%;
+  @include respond-to(tablet-large) {
+    gap: 10rem;
+  }
+  @include respond-to(tablet-small) {
+    flex-direction: column;
+    gap: 5rem;
+  }
 
   &__imgBox {
     width: 54rem;
     height: 56rem;
 
+    @include respond-to(tablet-small) {
+      width: 100%;
+      height: 40rem;
+    }
+
     &-img {
       width: 100%;
-      height: auto;
+      height: 100%;
 
       border-radius: 1rem;
     }
@@ -24,14 +36,22 @@
   flex-direction: column;
   justify-content: center;
   color: $color-black;
-  max-width: 44.5rem;
+  width: 44.5rem;
   gap: 3.5rem;
+  @include respond-to(tablet-small) {
+    align-items: center;
+    text-align: center;
+  }
   &__new {
     font-weight: 400;
     font-size: 1.5rem;
     letter-spacing: 0.5rem;
     text-transform: uppercase;
     color: $color-accent;
+    @include respond-to(tablet-small) {
+      font-size: 2.5rem;
+      letter-spacing: 1rem;
+    }
   }
 
   &__title {
@@ -39,6 +59,9 @@
     font-size: 3.5rem;
     text-transform: uppercase;
     line-height: 3.5rem;
+    @include respond-to(tablet-small) {
+      font-size: 4rem;
+    }
   }
 
   &__description {
@@ -57,5 +80,20 @@
     width: 16rem;
     height: 5rem;
     text-transform: uppercase;
+  }
+}
+
+.XX99IIImg {
+  background-image: url("../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include respond-to(tablet-small) {
+    background-image: url("../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg");
+  }
+
+  @include respond-to(mobile-small) {
+    background-image: url("../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg");
   }
 }

@@ -21,6 +21,7 @@ function XX99II() {
   return (
     <div className="box">
       <NavBar />
+
       <GoBack />
       <XX99MARKII>
         <AddToCart price="2,999" productName={"XX99 Mark II"} />

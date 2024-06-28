@@ -1,11 +1,10 @@
-import XX99MARKIICardImg from "../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg";
 import BtnSee from "./BtnSee";
 // eslint-disable-next-line react/prop-types
 function XX99MARKII({ children }) {
   return (
     <div className="XX99MARKIICard">
       <div className="XX99MARKIICard__imgBox">
-        <img src={XX99MARKIICardImg} className="XX99MARKIICard__imgBox-img" />
+        <div className="XX99MARKIICard__imgBox-img XX99IIImg"></div>
       </div>
       <div className="content2">
         <div className="content2__new">New product </div>
