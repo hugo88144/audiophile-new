@@ -36,10 +36,7 @@ function App() {
             <Route path="headphones/xx59-headphones" element={<XX59Page />} />
             <Route path="speakers/zx9-speaker" element={<ZX9Page />} />
             <Route path="speakers/zx7-speaker" element={<ZX7Page />} />
-            <Route
-              path="earphones/yx1-wireless-earphones"
-              element={<YX1Page />}
-            />
+            <Route path="earphones/yx1-earphones" element={<YX1Page />} />
 
             <Route path="speakers" element={<Speakers />} />
             <Route path="earphones" element={<Earphones />} />

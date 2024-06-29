@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
 import AudioProductsV2 from "../components/AudioProductsV2";
-import XX59Imgs from "../components/XX59Imgs";
+
 import XX99MARKIIcard from "../components/XX99MARKIIcard";
 import XX99MARKIcard from "../components/XX99MARKIcard";
 import ZX9card from "../components/ZX9card";
@@ -13,6 +13,7 @@ import XX59 from "../components/XX59";
 import AddToCart from "../components/AddToCart";
 import GoBack from "../components/GoBack";
 import ProductFeatures from "../components/ProductFeatures";
+import Gallery from "../components/Gallery";
 
 function XX59Page() {
   return (
@@ -26,7 +27,8 @@ function XX59Page() {
 
       <ProductFeatures index={2} />
 
-      <XX59Imgs />
+      <Gallery index={1} />
+
       <AudioProductsV2>
         <XX99MARKIIcard />
         <XX99MARKIcard />

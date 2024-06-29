@@ -3,7 +3,7 @@ import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
 import AudioProductsV2 from "../components/AudioProductsV2";
-import XX99IImgs from "../components/XX99IImgs";
+
 import XX99MARKIIcard from "../components/XX99MARKIIcard";
 import XX59card from "../components/XX59card";
 import ZX9card from "../components/ZX9card";
@@ -13,6 +13,7 @@ import AddToCart from "../components/AddToCart";
 import XX99MARKI from "../components/XX99MARKI";
 import GoBack from "../components/GoBack";
 import ProductFeatures from "../components/ProductFeatures";
+import Gallery from "../components/Gallery";
 
 function XX99I() {
   return (
@@ -24,7 +25,7 @@ function XX99I() {
       </XX99MARKI>
       <ProductFeatures index={2} />
 
-      <XX99IImgs />
+      <Gallery index={2} />
       <AudioProductsV2>
         <XX99MARKIIcard />
         <XX59card />
