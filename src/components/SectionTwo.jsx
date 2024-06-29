@@ -1,14 +1,21 @@
+import { useData } from "../Context/DataContext";
 import sectionTwoImg from "../assets/home/desktop/image-speaker-zx9.png";
 import rings from "../assets/home/desktop/pattern-circles.svg";
 
 import BtnSee from "./BtnSee";
+
 function SectionTwo() {
+  const { products, loading, error } = useData();
+
+  if (loading) return null;
+  if (error) return null;
+
   return (
     <div className="sectionTwo">
       <div className="sectionTwo__box">
         <img src={sectionTwoImg} className="sectionTwo__box-img" />
         <img src={rings} className="sectionTwo__rings" />
-        <div className="sectionTwo__title">ZX9 SPEAKER</div>
+        <div className="sectionTwo__title"></div>
         <div className="sectionTwo__description">
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
@@ -19,7 +26,9 @@ function SectionTwo() {
 
       <div className="sectionTwo__box-2">
         <div className="sectionTwo__img-2"></div>
-        <div className="sectionTwo__title-2">ZX7 SPEAKER</div>
+        <div className="sectionTwo__title-2">
+          {products[5] && products[5].name}
+        </div>
         <BtnSee className="sectionTwo__btn-2" />
       </div>
 

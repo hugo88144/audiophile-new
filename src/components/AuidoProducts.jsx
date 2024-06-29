@@ -19,8 +19,6 @@ function AudioProducts() {
     (product) => product.category === "earphones"
   );
 
-  //console.log(headphones[0].categoryI);
-
   return (
     <div className="audioBox">
       {/* Headphones category */}
