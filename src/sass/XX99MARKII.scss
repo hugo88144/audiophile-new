@@ -28,6 +28,9 @@
       height: 100%;
 
       border-radius: 1rem;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 }
@@ -80,20 +83,5 @@
     width: 16rem;
     height: 5rem;
     text-transform: uppercase;
-  }
-}
-
-.XX99IIImg {
-  background-image: url("../assets/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-
-  @include respond-to(tablet-small) {
-    background-image: url("../assets/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg");
-  }
-
-  @include respond-to(mobile-small) {
-    background-image: url("../assets/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg");
   }
 }

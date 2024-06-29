@@ -1,48 +1,51 @@
-import { useData } from "../Context/DataContext"; // Import the useData hook
-import BtnSee from "./BtnSee";
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
+import { useData } from "../Context/DataContext";
+import BtnSee from "../components/BtnSee";
 // eslint-disable-next-line react/prop-types
 function XX99MARKII({ children }) {
   const { products, loading, error } = useData();
-  const [bgImage, setBgImage] = useState("");
-
-  if (loading) return null;
-  if (error) return null;
+  const [imageUrl, setImageUrl] = useState("");
 
   // Find the product data for XX99 Mark II Headphones
-  const product = products.find(
+  const product = products?.find(
     (product) => product.name === "XX99 Mark II Headphones"
   );
 
-  if (!product) return null;
-
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
-    const updateBgImage = () => {
-      if (window.innerWidth < 480) {
-        setBgImage(product.categoryImage.mobile);
-      } else if (window.innerWidth < 768) {
-        setBgImage(product.categoryImage.tablet);
-      } else {
-        setBgImage(product.categoryImage.desktop);
+    const updateImageUrl = () => {
+      if (!product) return;
+
+      let newImageUrl = product.categoryImage.desktop;
+      if (window.innerWidth < 768) {
+        newImageUrl = product.categoryImage.tablet;
       }
+      if (window.innerWidth < 400) {
+        newImageUrl = product.categoryImage.mobile;
+      }
+
+      setImageUrl(newImageUrl);
     };
 
-    updateBgImage();
-    window.addEventListener("resize", updateBgImage);
+    // Initial call to set the image URL
+    updateImageUrl();
 
-    return () => {
-      window.removeEventListener("resize", updateBgImage);
-    };
-  }, [product.categoryImage]);
+    // Add event listener for window resize
+    window.addEventListener("resize", updateImageUrl);
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", updateImageUrl);
+  }, [product]);
+
+  if (loading) return null;
+  if (error) return null;
+  if (!product) return null;
 
   return (
     <div className="XX99MARKIICard">
       <div className="XX99MARKIICard__imgBox">
         <div
           className="XX99MARKIICard__imgBox-img XX99IIImg"
-          style={{ backgroundImage: `url(${bgImage})` }}
+          style={{ backgroundImage: `url(/src${imageUrl.replace(".", "")})` }}
         ></div>
       </div>
       <div className="content2">
@@ -62,5 +65,4 @@ function XX99MARKII({ children }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export default XX99MARKII;

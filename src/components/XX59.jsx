@@ -1,27 +1,63 @@
-import XX59Img from "../assets/product-xx59-headphones/desktop/image-category-page-preview.jpg";
-import BtnSee from "./BtnSee";
+import { useState, useEffect } from "react";
+import { useData } from "../Context/DataContext"; // Import the useData hook
+import BtnSee from "../components/BtnSee"; // Import BtnSee with correct relative path
+
 function XX59({ children }) {
+  const { products, loading, error } = useData();
+  const [imageUrl, setImageUrl] = useState("");
+
+  // Find the product data for XX59 Headphones
+  const product = products?.find(
+    (product) => product.name === "XX59 Headphones"
+  );
+
+  useEffect(() => {
+    const updateImageUrl = () => {
+      if (!product) return;
+
+      let newImageUrl = product.categoryImage.desktop;
+      if (window.innerWidth < 768) {
+        newImageUrl = product.categoryImage.tablet;
+      }
+      if (window.innerWidth < 400) {
+        newImageUrl = product.categoryImage.mobile;
+      }
+
+      setImageUrl(newImageUrl);
+    };
+
+    // Initial call to set the image URL
+    updateImageUrl();
+
+    // Add event listener for window resize
+    window.addEventListener("resize", updateImageUrl);
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener("resize", updateImageUrl);
+  }, [product]);
+
+  if (loading) return null;
+  if (error) return null;
+  if (!product) return null;
+
   return (
     <div className="XX99MARKIICard">
       <div className="XX99MARKIICard__imgBox">
-        <img src={XX59Img} className="XX99MARKIICard__imgBox-img" />
+        <div
+          className="XX99MARKIICard__imgBox-img XX99IImg"
+          style={{ backgroundImage: `url(/src${imageUrl.replace(".", "")})` }}
+        ></div>
       </div>
       <div className="content2">
-        <div className="content2__title">
-          XX59 <br /> Headphones
-        </div>
-        <p className="content2__description">
-          Enjoy your audio almost anywhere and customize it to your specific
-          tastes with the XX59 headphones. The stylish yet durable versatile
-          wireless headset is a brilliant companion at home or on the move.
-        </p>
-
+        <div className="content2__new">New product</div>
+        <div className="content2__title">{product.name}</div>
+        <p className="content2__description">{product.description}</p>
         {children ? (
           children
         ) : (
           <BtnSee
             className="content2__btn-see"
-            link="/headphones/xx59-headphones"
+            link={`/headphones/${product.slug}`}
           />
         )}
       </div>
