@@ -9,13 +9,13 @@ import XX99IIImgs from "../components/XX99IIImgs";
 import XX99MARKIcard from "../components/XX99MARKIcard.jsx";
 import XX59card from "../components/XX59card.jsx";
 import ZX9card from "../components/ZX9card.jsx";
-import XX99IIFeatures from "../components/XX99IIFeatures.jsx";
 
 import XX99MARKII from "../components/XX99MARKII";
 
 import AddToCart from "../components/AddToCart.jsx";
 
 import GoBack from "../components/GoBack.jsx";
+import ProductFeatures from "../components/ProductFeatures.jsx";
 
 function XX99II() {
   return (
@@ -26,7 +26,7 @@ function XX99II() {
       <XX99MARKII>
         <AddToCart price="2,999" productName={"XX99 Mark II"} />
       </XX99MARKII>
-      <XX99IIFeatures />
+      <ProductFeatures index={3} />
       <XX99IIImgs />
       <AudioProductsV2>
         <XX99MARKIcard />
