@@ -13,7 +13,6 @@ function HeaderContent({ productIndex = 3 }) {
 
   const linkName = slug;
 
-  console.log(linkName);
   const description =
     "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.";
   console.log(products);

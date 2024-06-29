@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */ // Disable ESLint prop-types warning because PropTypes are not being used here
 
 import { Link } from "react-router-dom";
-import { useCart } from "../Context/CartContext"; // Import useCart hook for accessing cart context
-import BtnCounter from "./BtnCounter"; // Import BtnCounter component for handling quantity changes
+import { useCart } from "../Context/CartContext";
+import BtnCounter from "./BtnCounter";
+import { useData } from "../Context/DataContext";
 
 function Cart() {
-  const { dispatch, cartItems } = useCart(); // Access dispatch function and cartItems from context
-
+  const { dispatch, cartItems } = useCart();
+  const { products, loading, error } = useData();
   // Handle removing all items from the cart
   const removeAllItems = () => {
     dispatch({ type: "REMOVE_ALL" }); // Dispatch action to remove all items from cart
