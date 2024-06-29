@@ -29,7 +29,7 @@ function AudioProducts() {
           <img src={XX99IImg} alt="Headphones" className="audioBox__img" />
 
           <div className="audioBox__title">{headphones[0].category}</div>
-          <Link to={`/product/${headphones[0].id}`}>
+          <Link to={`/${headphones[0].category}`}>
             <button className="audioBox__btn">
               Shop{" "}
               <span className="audioBox__arrow">
@@ -46,7 +46,7 @@ function AudioProducts() {
           <img src={ZX9Img} alt="Speakers" className="audioBox__img" />
 
           <div className="audioBox__title">{speakers[0].category}</div>
-          <Link to={`/product/${speakers[0].id}`}>
+          <Link to={`/${speakers[0].category}`}>
             <button className="audioBox__btn">
               Shop{" "}
               <span className="audioBox__arrow">
@@ -63,7 +63,7 @@ function AudioProducts() {
           <img src={YX1Img} alt="Earphones" className="audioBox__img" />
 
           <div className="audioBox__title">{earphones[0].category}</div>
-          <Link to={`/product/${earphones[0].id}`}>
+          <Link to={`/${earphones[0].category}`}>
             <button className="audioBox__btn">
               Shop{" "}
               <span className="audioBox__arrow">

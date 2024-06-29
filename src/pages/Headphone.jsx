@@ -11,6 +11,7 @@ function Headphone() {
     <div className="box">
       <NavBar />
       <Header text="HEADPHONES" />
+
       <XX99MARKII />
       <XX99MARKI />
       <XX59 />

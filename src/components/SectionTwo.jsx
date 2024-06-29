@@ -10,12 +10,22 @@ function SectionTwo() {
   if (loading) return null;
   if (error) return null;
 
+  ///forced to remove middle word since the data given is not in the correct format
+  const removeMiddleWord = (name) => {
+    const words = name.split(" ");
+    // Assuming words array has exactly 3 elements
+    if (words.length === 3) {
+      // Remove the middle word (index 1)
+      words.splice(1, 1);
+    }
+    return words.join(" ");
+  };
   return (
     <div className="sectionTwo">
       <div className="sectionTwo__box">
         <img src={sectionTwoImg} className="sectionTwo__box-img" />
         <img src={rings} className="sectionTwo__rings" />
-        <div className="sectionTwo__title"></div>
+        <div className="sectionTwo__title">{products[5].name}</div>
         <div className="sectionTwo__description">
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
@@ -26,9 +36,7 @@ function SectionTwo() {
 
       <div className="sectionTwo__box-2">
         <div className="sectionTwo__img-2"></div>
-        <div className="sectionTwo__title-2">
-          {products[5] && products[5].name}
-        </div>
+        <div className="sectionTwo__title-2">{products[4].name}</div>
         <BtnSee className="sectionTwo__btn-2" />
       </div>
 
@@ -39,7 +47,9 @@ function SectionTwo() {
 
         <div className="sectionTwo__box-4">
           <div>
-            <div className="sectionTwo__title-3">YX1 EARPHONES</div>
+            <div className="sectionTwo__title-3">
+              {products.length > 0 && removeMiddleWord(products[0].name)}
+            </div>
             <BtnSee className="sectionTwo__btn-2" />
           </div>
         </div>
