@@ -1,3 +1,5 @@
+/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { useData } from "../Context/DataContext"; // Import the useData hook
 import BtnSee from "../components/BtnSee"; // Import BtnSee with correct relative path

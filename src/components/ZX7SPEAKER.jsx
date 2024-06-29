@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { useData } from "../Context/DataContext"; // Import the useData hook
 import BtnSee from "../components/BtnSee"; // Import BtnSee with correct relative path
 
+// eslint-disable-next-line react/prop-types
 function ZX7SPEAKER({ children }) {
   const { products, loading, error } = useData();
   const [imageUrl, setImageUrl] = useState("");
+  const [isColumnReverse, setIsColumnReverse] = useState(false);
 
   // Find the product data for ZX7 Speaker
   const product = products?.find((product) => product.name === "ZX7 Speaker");
@@ -24,14 +26,23 @@ function ZX7SPEAKER({ children }) {
       setImageUrl(newImageUrl);
     };
 
-    // Initial call to set the image URL
+    const updateFlexDirection = () => {
+      setIsColumnReverse(window.innerWidth < 768);
+    };
+
+    // Initial call to set the image URL and flex direction
     updateImageUrl();
+    updateFlexDirection();
 
-    // Add event listener for window resize
+    // Add event listeners for window resize
     window.addEventListener("resize", updateImageUrl);
+    window.addEventListener("resize", updateFlexDirection);
 
-    // Clean up event listener on component unmount
-    return () => window.removeEventListener("resize", updateImageUrl);
+    // Clean up event listeners on component unmount
+    return () => {
+      window.removeEventListener("resize", updateImageUrl);
+      window.removeEventListener("resize", updateFlexDirection);
+    };
   }, [product]);
 
   if (loading) return null;
@@ -39,13 +50,13 @@ function ZX7SPEAKER({ children }) {
   if (!product) return null;
 
   return (
-    <div className="XX99MARKIICard">
-      <div className="XX99MARKIICard__imgBox">
-        <div
-          className="XX99MARKIICard__imgBox-img XX99IImg"
-          style={{ backgroundImage: `url(/src${imageUrl.replace(".", "")})` }}
-        ></div>
-      </div>
+    <div
+      className="XX99MARKIICard"
+      style={{
+        flexDirection: isColumnReverse ? "column-reverse" : "row",
+        display: "flex",
+      }}
+    >
       <div className="content2">
         <div className="content2__title">{product.name}</div>
         <p className="content2__description">{product.description}</p>
@@ -58,8 +69,15 @@ function ZX7SPEAKER({ children }) {
           />
         )}
       </div>
+      <div className="XX99MARKIICard__imgBox">
+        <div
+          className="XX99MARKIICard__imgBox-img XX99IImg"
+          style={{ backgroundImage: `url(/src${imageUrl.replace(".", "")})` }}
+        ></div>
+      </div>
     </div>
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default ZX7SPEAKER;

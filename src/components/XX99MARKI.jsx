@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import { useData } from "../Context/DataContext"; // Import the useData hook
 import BtnSee from "../components/BtnSee"; // Import BtnSee with correct relative path
@@ -81,4 +82,5 @@ function XX99MARKI({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default XX99MARKI;
