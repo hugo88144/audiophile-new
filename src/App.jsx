@@ -16,36 +16,39 @@ import ZX7Page from "./pages/ZX7Page";
 import YX1Page from "./pages/YX1Page";
 import { CartProvider } from "./Context/CartContext";
 import CheckOutPage from "./pages/CheckOutPage";
+import { DataProvider } from "./Context/DataContext";
 function App() {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="headphones" element={<Headphone />} />
-          <Route
-            path="headphones/xx99-mark-two-headphones"
-            element={<XX99II />}
-          />
-          <Route
-            path="headphones/xx99-mark-one-headphones"
-            element={<XX99I />}
-          />
-          <Route path="headphones/xx59-headphones" element={<XX59Page />} />
-          <Route path="speakers/zx9-speaker" element={<ZX9Page />} />
-          <Route path="speakers/zx7-speaker" element={<ZX7Page />} />
-          <Route
-            path="earphones/yx1-wireless-earphones"
-            element={<YX1Page />}
-          />
+    <DataProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="headphones" element={<Headphone />} />
+            <Route
+              path="headphones/xx99-mark-two-headphones"
+              element={<XX99II />}
+            />
+            <Route
+              path="headphones/xx99-mark-one-headphones"
+              element={<XX99I />}
+            />
+            <Route path="headphones/xx59-headphones" element={<XX59Page />} />
+            <Route path="speakers/zx9-speaker" element={<ZX9Page />} />
+            <Route path="speakers/zx7-speaker" element={<ZX7Page />} />
+            <Route
+              path="earphones/yx1-wireless-earphones"
+              element={<YX1Page />}
+            />
 
-          <Route path="speakers" element={<Speakers />} />
-          <Route path="earphones" element={<Earphones />} />
-          <Route path="checkout" element={<CheckOutPage />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
-    </CartProvider>
+            <Route path="speakers" element={<Speakers />} />
+            <Route path="earphones" element={<Earphones />} />
+            <Route path="checkout" element={<CheckOutPage />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </DataProvider>
   );
 }
 

@@ -6,7 +6,7 @@ function SectionOne() {
     <div className="container">
       <Nav />
 
-      <HeaderContent />
+      <HeaderContent productIndex={3} />
     </div>
   );
 }
