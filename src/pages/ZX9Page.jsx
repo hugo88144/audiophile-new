@@ -10,9 +10,9 @@ import XX59card from "../components/XX59card.jsx";
 import AddToCart from "../components/AddToCart.jsx";
 import ZX7card from "../components/ZX7card.jsx";
 import ZX9Imgs from "../components/ZX9Imgs.jsx";
-import ZX9Features from "../components/ZX9Features.jsx";
 
 import ZX9SPEAKER from "../components/ZX9SPEAKER.jsx";
+import ProductFeatures from "../components/ProductFeatures.jsx";
 function ZX9Page() {
   return (
     <div className="box">
@@ -20,7 +20,7 @@ function ZX9Page() {
       <ZX9SPEAKER>
         <AddToCart price="4,500" productName={"ZX9 Speaker"} />
       </ZX9SPEAKER>
-      <ZX9Features />
+      <ProductFeatures index={5} />
       <ZX9Imgs />
       <AudioProductsV2>
         <ZX7card />

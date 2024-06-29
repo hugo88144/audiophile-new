@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useData } from "../Context/DataContext"; // Import the useData hook
-import BtnSee from "../components/BtnSee"; // Import BtnSee with correct relative path
+import { useData } from "../Context/DataContext";
+import BtnSee from "../components/BtnSee";
 
 // eslint-disable-next-line react/prop-types
 function ZX9SPEAKER({ children }) {
