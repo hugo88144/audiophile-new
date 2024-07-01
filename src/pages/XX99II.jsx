@@ -23,7 +23,7 @@ function XX99II() {
       <XX99MARKII>
         <AddToCart price="2,999" productName={"XX99 Mark II"} />
       </XX99MARKII>
-      {/* <ProductFeatures index={3} /> */}
+      <ProductFeatures index={3} />
       <Gallery index={3} />
       <AudioProductsV2 index={3} />
 
