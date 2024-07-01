@@ -16,12 +16,19 @@ function AudioProductsV2({ index = 0 }) {
   if (!data) return null;
 
   const { others } = data;
-  //const { mobile, tablet, desktop } = image;
-  console.log(others);
+  const { 0: first, 1: second, 2: third } = others;
+  const { name, slug, image } = first;
+  const { mobile, tablet, desktop } = image;
+
+  const { name2, slug2, image2 } = second;
+
+  const { name3, slug3, image3 } = third;
+
+  console.log(name, slug, image);
 
   return (
     <div className="card">
-      {/* <div className="card__imgBox">
+      <div className="card__imgBox">
         <img
           src={desktop}
           srcSet={`/src${mobile.replace(".", "")} 480w, /src${tablet.replace(
@@ -34,7 +41,7 @@ function AudioProductsV2({ index = 0 }) {
         />
       </div>
       <div className="card__title">{name}</div>
-      <BtnSee className="content__btn-see" link={`/speakers/${slug}`} /> */}
+      <BtnSee className="content__btn-see" link={`/speakers/${slug}`} />
     </div>
   );
 }
