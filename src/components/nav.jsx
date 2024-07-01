@@ -21,13 +21,13 @@ function NavBar() {
 
   return (
     <nav className="nav">
-      <img className="nav-link logo" src={logo} alt="Logo" />
-      <Link to="/" className="nav-link">
+      <img className="nav-link logo " src={logo} alt="Logo" />
+      <Link to="/" className="nav-link gone">
         HOME
       </Link>
 
       {sortedCategories.map((category) => (
-        <Link to={`/${category}`} key={category} className="nav-link">
+        <Link to={`/${category}`} key={category} className="nav-link gone">
           {category.toUpperCase()}
         </Link>
       ))}
