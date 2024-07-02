@@ -17,7 +17,9 @@ $color-white: #ffffff;
 $color-black: #000000;
 
 $breakpoint-mobile-small: 375px;
+$breakpoint-four-Hundred: 400px;
 $breakpoint-mobile-medium: 500px;
+
 $breakpoint-mobile-large: 600px;
 $breakpoint-tablet-small: 768px;
 $breakpoint-tablet-medium: 900px;
@@ -30,6 +32,10 @@ $breakpoint-desktop-large: 1600px;
 @mixin respond-to($breakpoint) {
   @if $breakpoint == mobile-small {
     @media (max-width: $breakpoint-mobile-small) {
+      @content;
+    }
+  } @else if $breakpoint == four-Hundred {
+    @media (max-width: $breakpoint-four-Hundred) {
       @content;
     }
   } @else if $breakpoint == mobile-medium {

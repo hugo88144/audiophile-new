@@ -4,11 +4,7 @@ import ProductCard from "../components/ProductCard";
 import AudioProducts from "../components/AuidoProducts";
 import AudioProductsV2 from "../components/AudioProductsV2";
 
-import XX99MARKIcard from "../components/XX99MARKIcard.jsx";
-import XX59card from "../components/XX59card.jsx";
-
 import AddToCart from "../components/AddToCart.jsx";
-import ZX7card from "../components/ZX7card.jsx";
 
 import ZX9SPEAKER from "../components/ZX9SPEAKER.jsx";
 import ProductFeatures from "../components/ProductFeatures.jsx";
@@ -22,11 +18,8 @@ function ZX9Page() {
       </ZX9SPEAKER>
       <ProductFeatures index={5} />
       <Gallery index={5} />
-      <AudioProductsV2>
-        <ZX7card />
-        <XX99MARKIcard />
-        <XX59card />
-      </AudioProductsV2>
+      <AudioProductsV2 index={5} />
+
       <AudioProducts />
 
       <ProductCard />

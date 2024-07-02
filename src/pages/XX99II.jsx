@@ -18,17 +18,15 @@ function XX99II() {
   return (
     <div className="box">
       <NavBar />
-
       <GoBack />
       <XX99MARKII>
         <AddToCart price="2,999" productName={"XX99 Mark II"} />
       </XX99MARKII>
+
       <ProductFeatures index={3} />
       <Gallery index={3} />
       <AudioProductsV2 index={3} />
-
       <AudioProducts />
-
       <ProductCard />
     </div>
   );

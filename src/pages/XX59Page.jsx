@@ -4,10 +4,6 @@ import ProductCard from "../components/ProductCard";
 import AudioProducts from "../components/AuidoProducts";
 import AudioProductsV2 from "../components/AudioProductsV2";
 
-import XX99MARKIIcard from "../components/XX99MARKIIcard";
-import XX99MARKIcard from "../components/XX99MARKIcard";
-import ZX9card from "../components/ZX9card";
-
 import XX59 from "../components/XX59";
 
 import AddToCart from "../components/AddToCart";
@@ -25,15 +21,12 @@ function XX59Page() {
         <AddToCart price="899" productName={"XX59 Headphones"} />
       </XX59>
 
-      <ProductFeatures index={2} />
+      <ProductFeatures index={1} />
 
       <Gallery index={1} />
 
-      <AudioProductsV2>
-        <XX99MARKIIcard />
-        <XX99MARKIcard />
-        <ZX9card />
-      </AudioProductsV2>
+      <AudioProductsV2 index={1} />
+
       <AudioProducts />
 
       <ProductCard />

@@ -34,10 +34,9 @@ function App() {
               element={<XX99I />}
             />
             <Route path="headphones/xx59-headphones" element={<XX59Page />} />
-            <Route path="speakers/zx9-speaker" element={<ZX9Page />} />
-            <Route path="speakers/zx7-speaker" element={<ZX7Page />} />
+            <Route path="speaker/zx9-speaker" element={<ZX9Page />} />
+            <Route path="speaker/zx7-speaker" element={<ZX7Page />} />
             <Route path="earphones/yx1-earphones" element={<YX1Page />} />
-
             <Route path="speakers" element={<Speakers />} />
             <Route path="earphones" element={<Earphones />} />
             <Route path="checkout" element={<CheckOutPage />} />

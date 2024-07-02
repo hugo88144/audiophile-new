@@ -56,7 +56,7 @@ function ZX9SPEAKER({ children }) {
         ) : (
           <BtnSee
             className="content2__btn-see"
-            link={`/speakers/${product.slug}`}
+            link={`/speaker/${product.slug}`}
           />
         )}
       </div>

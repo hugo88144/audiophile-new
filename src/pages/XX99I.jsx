@@ -4,10 +4,6 @@ import ProductCard from "../components/ProductCard";
 import AudioProducts from "../components/AuidoProducts";
 import AudioProductsV2 from "../components/AudioProductsV2";
 
-import XX99MARKIIcard from "../components/XX99MARKIIcard";
-import XX59card from "../components/XX59card";
-import ZX9card from "../components/ZX9card";
-
 import AddToCart from "../components/AddToCart";
 
 import XX99MARKI from "../components/XX99MARKI";
@@ -26,11 +22,8 @@ function XX99I() {
       <ProductFeatures index={2} />
 
       <Gallery index={2} />
-      <AudioProductsV2>
-        <XX99MARKIIcard />
-        <XX59card />
-        <ZX9card />
-      </AudioProductsV2>
+      <AudioProductsV2 index={2} />
+
       <AudioProducts />
 
       <ProductCard />
