@@ -9,10 +9,12 @@ import AddToCart from "../components/AddToCart.jsx";
 import ZX9SPEAKER from "../components/ZX9SPEAKER.jsx";
 import ProductFeatures from "../components/ProductFeatures.jsx";
 import Gallery from "../components/Gallery.jsx";
+import GoBack from "../components/GoBack.jsx";
 function ZX9Page() {
   return (
     <div className="box">
       <NavBar />
+      <GoBack />
       <ZX9SPEAKER>
         <AddToCart price="4,500" productName={"ZX9 Speaker"} />
       </ZX9SPEAKER>

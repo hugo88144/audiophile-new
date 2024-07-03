@@ -17,11 +17,24 @@ import YX1Page from "./pages/YX1Page";
 import { CartProvider } from "./Context/CartContext";
 import CheckOutPage from "./pages/CheckOutPage";
 import { DataProvider } from "./Context/DataContext";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
+
 function App() {
+  const useScrollToTop = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+  };
+
   return (
     <DataProvider>
       <CartProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="headphones" element={<Headphone />} />

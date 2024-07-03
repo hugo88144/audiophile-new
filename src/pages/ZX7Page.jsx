@@ -10,10 +10,12 @@ import ZX7SPEAKER from "../components/ZX7SPEAKER.jsx";
 
 import ProductFeatures from "../components/ProductFeatures.jsx";
 import Gallery from "../components/Gallery.jsx";
+import GoBack from "../components/GoBack.jsx";
 function ZX7Page() {
   return (
     <div className="box">
       <NavBar />
+      <GoBack />
       <ZX7SPEAKER>
         <AddToCart price="3,500" productName={"ZX7 Speaker"} />
       </ZX7SPEAKER>
