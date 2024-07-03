@@ -26,7 +26,7 @@ function ProductFeatures({ index }) {
         {productdata.includes.map((include, idx) => (
           <div key={idx} className="features__includes-quantityBox">
             <div className="features__includes-quantity">
-              <span>{include.quantity}</span> {include.item}
+              <span>{`${include.quantity}x`}</span> {include.item}
             </div>
           </div>
         ))}
