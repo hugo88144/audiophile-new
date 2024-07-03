@@ -38,6 +38,11 @@
       width: 100%;
       line-height: 3rem;
     }
+
+    @include respond-to(tablet-large) {
+      font-size: 2rem;
+      word-spacing: 0.3rem;
+    }
   }
 
   &__includes {

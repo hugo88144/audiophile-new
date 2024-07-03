@@ -1,8 +1,39 @@
 /* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
 import { useData } from "../Context/DataContext";
 
 function Gallery({ index = 0 }) {
   const { products, loading, error } = useData();
+  const [imageUrls, setImageUrls] = useState({});
+
+  const updateImageUrls = (gallery) => {
+    const getResponsiveImageUrl = (image) => {
+      if (window.innerWidth < 400) return image.mobile;
+      if (window.innerWidth < 768) return image.tablet;
+      return image.desktop;
+    };
+
+    const newImageUrls = {
+      first: getResponsiveImageUrl(gallery.first),
+      second: getResponsiveImageUrl(gallery.second),
+      third: getResponsiveImageUrl(gallery.third),
+    };
+
+    console.log("Updated image URLs:", newImageUrls);
+    setImageUrls(newImageUrls);
+  };
+
+  useEffect(() => {
+    if (products && products[index]) {
+      const { gallery } = products[index];
+      if (gallery && gallery.first && gallery.second && gallery.third) {
+        updateImageUrls(gallery);
+        const handleResize = () => updateImageUrls(gallery);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }
+  }, [products, index]);
 
   if (loading) return null;
   if (error) return null;
@@ -20,74 +51,32 @@ function Gallery({ index = 0 }) {
     return null;
   }
 
-  // Destructuring gallery data for each image
-  const { first, second, third } = gallery;
-
-  // Destructuring image URLs for different devices
-  const {
-    mobile: firstMobile,
-    tablet: firstTablet,
-    desktop: firstDesktop,
-  } = first;
-  const {
-    mobile: secondMobile,
-    tablet: secondTablet,
-    desktop: secondDesktop,
-  } = second;
-  const {
-    mobile: thirdMobile,
-    tablet: thirdTablet,
-    desktop: thirdDesktop,
-  } = third;
-
   return (
     <div className="imgContainer">
       <div className="imgContainer__imgBox">
         {/* Responsive image for the first image */}
-
-        <img
-          src={firstMobile}
-          srcSet={`/src${firstMobile.replace(
-            ".",
-            ""
-          )} 480w, /src${firstTablet.replace(
-            ".",
-            ""
-          )} 768w, /src${firstDesktop.replace(".", "")} 1200w`}
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-          alt="Gallery Image 1"
+        <div
           className="imgContainer__imgBox-img"
-        />
+          style={{
+            backgroundImage: `url(/src${imageUrls.first?.replace(".", "")})`,
+          }}
+        ></div>
         {/* Responsive image for the second image */}
-        <img
-          src={secondMobile}
-          srcSet={`/src${secondMobile.replace(
-            ".",
-            ""
-          )} 480w, /src${secondTablet.replace(
-            ".",
-            ""
-          )} 768w, /src${secondDesktop.replace(".", "")} 1200w`}
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-          alt="Gallery Image 2"
+        <div
           className="imgContainer__imgBox-img"
-        />
+          style={{
+            backgroundImage: `url(/src${imageUrls.second?.replace(".", "")})`,
+          }}
+        ></div>
       </div>
       <div className="imgContainer__imgBigBox">
         {/* Responsive image for the third image */}
-        <img
-          src={thirdMobile}
-          srcSet={`/src${thirdMobile.replace(
-            ".",
-            ""
-          )} 480w, /src${thirdTablet.replace(
-            ".",
-            ""
-          )} 768w, /src${thirdDesktop.replace(".", "")} 1200w`}
-          sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, 33vw"
-          alt="Gallery Image 3"
-          className="imgContainer__imgBox-img"
-        />
+        <div
+          className="imgContainer__imgBigBox-img"
+          style={{
+            backgroundImage: `url(/src${imageUrls.third?.replace(".", "")})`,
+          }}
+        ></div>
       </div>
     </div>
   );
