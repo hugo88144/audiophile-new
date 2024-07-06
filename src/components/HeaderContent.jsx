@@ -15,7 +15,7 @@ function HeaderContent({ productIndex = 3 }) {
 
   const description =
     "Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.";
-  console.log(products);
+
   return (
     <div className="content">
       <div className="content__new">New product </div>
