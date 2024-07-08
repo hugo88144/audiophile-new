@@ -17,6 +17,10 @@
     padding-top: 6rem;
   }
 
+  @include respond-to(tablet-small) {
+    width: 100%;
+  }
+
   z-index: 100;
   &__header {
     width: 100%;
@@ -120,6 +124,9 @@
 
     height: 5rem;
     text-transform: uppercase;
+    @include respond-to(tablet-large) {
+      width: 100%;
+    }
   }
 }
 

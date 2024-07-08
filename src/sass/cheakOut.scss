@@ -9,6 +9,9 @@
   background-color: $color-light-gray;
   gap: 4rem;
   border-radius: 8px;
+  @include respond-to(tablet-small) {
+    padding: 4rem;
+  }
 
   .checkout__box {
     display: flex;
@@ -29,6 +32,7 @@
     }
     @include respond-to(tablet-small) {
       width: 100%;
+      padding: 4rem;
     }
 
     .checkout__title {
@@ -172,15 +176,16 @@
 
 .form {
   display: flex;
+  width: 100%;
   gap: 4rem;
   height: 100%;
-  align-items: center;
-  background-color: ;
+  justify-content: center;
 
   @include respond-to(tablet-large) {
     flex-direction: column;
     gap: 0;
     width: 80%;
+    align-items: center;
   }
   @include respond-to(tablet-small) {
     width: 100%;
