@@ -22,6 +22,10 @@
     margin-top: 5rem;
     margin-bottom: 10rem;
     border-radius: 6px;
+    @include respond-to(tablet-large) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
 
     .checkout__title {
       font-size: 2.5rem;
@@ -147,6 +151,10 @@
 .form {
   display: flex;
   gap: 4rem;
+  @include respond-to(tablet-large) {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 
 .inputInvalid {
