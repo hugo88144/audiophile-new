@@ -26,6 +26,9 @@
       flex-direction: column;
       margin-bottom: 0;
     }
+    @include respond-to(tablet-small) {
+      width: 100%;
+    }
 
     .checkout__title {
       font-size: 2.5rem;
@@ -50,6 +53,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
+
         label {
           display: flex;
           align-items: start;
@@ -154,6 +158,9 @@
   @include respond-to(tablet-large) {
     flex-direction: column;
     gap: 0;
+  }
+  @include respond-to(tablet-small) {
+    width: 100%;
   }
 }
 
