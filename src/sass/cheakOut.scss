@@ -15,7 +15,7 @@
     flex-direction: column;
     gap: 5rem;
     width: 73rem;
-    height: 112rem;
+    height: 100%;
     background-color: #fff;
     padding: 4rem;
 
@@ -25,6 +25,7 @@
     @include respond-to(tablet-large) {
       flex-direction: column;
       margin-bottom: 0;
+      width: 90%;
     }
     @include respond-to(tablet-small) {
       width: 100%;
@@ -35,6 +36,10 @@
       font-weight: bold;
       margin-bottom: 20px;
       color: #000;
+
+      @include respond-to(tablet-large) {
+        font-size: 4rem;
+      }
     }
 
     .checkout__BillingDetails,
@@ -47,6 +52,9 @@
         font-weight: 600;
         margin-bottom: 2rem;
         color: #f38943;
+        @include respond-to(tablet-large) {
+          font-size: 2rem;
+        }
       }
 
       &-Container {
@@ -60,6 +68,9 @@
           font-size: 1.4rem;
           color: #000; /* Black color for method labels */
           grid-area: 1 / 1 / 3 / 2;
+          @include respond-to(tablet-large) {
+            font-size: 2rem;
+          }
         }
 
         &-name,
@@ -80,6 +91,9 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
             color: #000; /* Black color for labels */
+            @include respond-to(tablet-large) {
+              font-size: 2rem;
+            }
             & span {
               margin-left: auto;
               color: red;
@@ -95,6 +109,10 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             outline: none;
+            @include respond-to(tablet-large) {
+              font-size: 2rem;
+              padding: 2.5rem;
+            }
 
             &:focus {
               border-color: #ff6600;
@@ -155,9 +173,14 @@
 .form {
   display: flex;
   gap: 4rem;
+  height: 100%;
+  align-items: center;
+  background-color: ;
+
   @include respond-to(tablet-large) {
     flex-direction: column;
     gap: 0;
+    width: 80%;
   }
   @include respond-to(tablet-small) {
     width: 100%;
