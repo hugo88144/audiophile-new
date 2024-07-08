@@ -66,6 +66,10 @@
         grid-template-columns: 1fr 1fr;
         gap: 2.5rem;
 
+        @include respond-to(tablet-small) {
+          grid-template-columns: 1fr;
+        }
+
         label {
           display: flex;
           align-items: start;
