@@ -129,19 +129,3 @@
     }
   }
 }
-
-.items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 50%;
-  background-color: $color-primary;
-  color: $color-white;
-  font-size: 1.3rem;
-  font-weight: 700;
-  position: absolute;
-  right: 40rem;
-  top: 2rem;
-}

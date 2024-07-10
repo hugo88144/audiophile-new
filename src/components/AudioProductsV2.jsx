@@ -43,7 +43,6 @@ function AudioProductsV2({ index = 0 }) {
 
   const data = products[index];
   if (!data || !data.others) return null;
-  console.log(data);
 
   return (
     <div className="audioProductsV2">

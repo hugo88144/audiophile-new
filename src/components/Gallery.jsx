@@ -19,7 +19,6 @@ function Gallery({ index = 0 }) {
       third: getResponsiveImageUrl(gallery.third),
     };
 
-    console.log("Updated image URLs:", newImageUrls);
     setImageUrls(newImageUrls);
   };
 

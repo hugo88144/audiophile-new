@@ -1,0 +1,52 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  width: 100%;
+  height: 8rem;
+
+  padding: 0 20%;
+  border-bottom: 0.5px solid #2a2a2a;
+  position: fixed; /* Make the nav sticky */
+  top: 0; /* Stick to the top of the viewport */
+  background-color: $color-dark; /* Ensure the background color remains the same */
+  z-index: 300; /* Ensure it stays on top of other content */
+  @include respond-to(desktop-small) {
+    padding: 0 10%;
+  }
+
+  @include respond-to(tablet-medium) {
+    .gone {
+      display: none;
+      justify-content: space-between;
+    }
+
+    padding: 0 4rem;
+    justify-content: start;
+    gap: 6rem;
+  }
+
+  &-link {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: $color-white;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+.hamBurger {
+  display: none;
+  @include respond-to(tablet-medium) {
+    display: flex;
+    background-color: transparent;
+    border: none;
+  }
+}
+.basket-box {
+  margin-left: auto;
+}

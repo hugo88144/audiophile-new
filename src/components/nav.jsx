@@ -2,8 +2,13 @@ import logo from "../assets/shared/desktop/logo.svg";
 import { Link } from "react-router-dom";
 import Basket from "./Basket";
 import { useData } from "../Context/DataContext";
+import HamBurger from "./HamBurger";
+import { useState } from "react";
+
+import AudioProductsV3 from "./AudioProductsV3.jsx";
 function NavBar() {
   const { products, loading, error } = useData();
+  const [isActive, setIsActive] = useState(false);
 
   if (loading) return null;
   if (error) return null;
@@ -20,19 +25,24 @@ function NavBar() {
   });
 
   return (
-    <nav className="nav">
-      <img className="nav-link logo " src={logo} alt="Logo" />
-      <Link to="/" className="nav-link gone">
-        HOME
-      </Link>
-
-      {sortedCategories.map((category) => (
-        <Link to={`/${category}`} key={category} className="nav-link gone">
-          {category.toUpperCase()}
+    <>
+      <nav className="nav">
+        <HamBurger isActive={isActive} setIsActive={setIsActive} />
+        <img className="nav-link logo " src={logo} alt="Logo" />
+        <Link to="/" className="nav-link gone">
+          HOME
         </Link>
-      ))}
-      <Basket />
-    </nav>
+
+        {sortedCategories.map((category) => (
+          <Link to={`/${category}`} key={category} className="nav-link gone">
+            {category.toUpperCase()}
+          </Link>
+        ))}
+        <Basket />
+      </nav>
+
+      {isActive && <AudioProductsV3 />}
+    </>
   );
 }
 

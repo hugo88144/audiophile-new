@@ -108,6 +108,9 @@
     text-transform: uppercase;
   }
 }
+.basket-box {
+  position: relative;
+}
 
 .items {
   display: flex;
@@ -121,6 +124,6 @@
   font-size: 1.3rem;
   font-weight: 700;
   position: absolute;
-  right: 40rem;
-  top: 2rem;
+  top: -1.5rem;
+  right: 0.9rem;
 }

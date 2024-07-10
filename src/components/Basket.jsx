@@ -15,13 +15,14 @@ function Basket() {
   }
 
   return (
-    <>
+    <div className="basket-box">
       <img
         className="nav-link"
         src={cart}
         alt="Cart Icon"
         onClick={handleBasket}
       />
+
       {cartItems.length > 0 && <div className="items">{cartItems.length}</div>}
       {cartActive && (
         <>
@@ -29,7 +30,7 @@ function Basket() {
           <Cart />
         </>
       )}
-    </>
+    </div>
   );
 }
 
