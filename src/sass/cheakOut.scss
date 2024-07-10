@@ -107,6 +107,9 @@
               color: red;
             }
           }
+          &-city {
+            // grid-area: 2 / 1 / 3 / 2 !important;
+          }
 
           input[type="text"],
           input[type="email"],
@@ -198,4 +201,9 @@
 
 .inputInvalid {
   border-color: red !important;
+}
+
+.checkout__ShippingInfo-Container {
+  display: flex !important;
+  flex-direction: column;
 }
