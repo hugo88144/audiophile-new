@@ -23,6 +23,12 @@
   padding: 3rem;
   border-radius: 1rem;
   z-index: 200;
+  @include respond-to(tablet-small) {
+    transform: scale(1.6);
+    top: 30rem;
+    right: 50%;
+    transform: translate(-50%, -50%);
+  }
   &__header {
     width: 100%;
     display: flex;

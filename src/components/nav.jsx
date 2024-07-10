@@ -4,8 +4,7 @@ import Basket from "./Basket";
 import { useData } from "../Context/DataContext";
 import HamBurger from "./HamBurger";
 import { useState } from "react";
-
-import AudioProductsV3 from "./AudioProductsV3.jsx";
+import AudioProductsV3 from "./AudioProductsV3";
 function NavBar() {
   const { products, loading, error } = useData();
   const [isActive, setIsActive] = useState(false);

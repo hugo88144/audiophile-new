@@ -93,6 +93,8 @@ $breakpoint-desktop-large: 1600px;
 @import "./confirmation";
 @import "./nav";
 
+@import "./audioProductsV3";
+
 html {
   font-size: 62.5%; // Base font size for normal screens
   font-family: "Manrope", sans-serif;
