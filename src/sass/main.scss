@@ -129,8 +129,4 @@ html {
   @include respond-to(mobile-medium) {
     font-size: 40%;
   }
-
-  @include respond-to(mobile-small) {
-    font-size: 50%; // Smallest font size
-  }
 }

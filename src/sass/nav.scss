@@ -48,5 +48,7 @@
   }
 }
 .basket-box {
-  margin-left: auto;
+  @include respond-to(tablet-medium) {
+    margin-left: auto;
+  }
 }

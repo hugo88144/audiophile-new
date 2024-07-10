@@ -27,7 +27,10 @@ function NavBar() {
     <>
       <nav className="nav">
         <HamBurger isActive={isActive} setIsActive={setIsActive} />
-        <img className="nav-link logo " src={logo} alt="Logo" />
+        <Link to="/" className="nav-link ">
+          <img className="nav-link logo " src={logo} alt="Logo" />
+        </Link>
+
         <Link to="/" className="nav-link gone">
           HOME
         </Link>

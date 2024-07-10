@@ -68,7 +68,7 @@ function Confirmation() {
             </div>
           </div>
         </div>
-        <Link to="/">
+        <Link to="/" className="confirmation__link">
           <button className="confirmation__btn">BACK TO HOME</button>
         </Link>
       </div>

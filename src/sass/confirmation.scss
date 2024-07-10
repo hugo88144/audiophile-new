@@ -24,6 +24,7 @@
   height: 71rem;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
 
   &__icon {
     width: 50px;
@@ -50,8 +51,8 @@
     border-radius: 8px;
 
     margin-bottom: 2rem;
-    width: 44.4rem;
-    height: 27rem;
+    width: 100%;
+    height: max-content;
 
     &-cart {
       width: 100%;
@@ -98,10 +99,15 @@
       }
     }
   }
+  &__link {
+    text-decoration: none;
+    align-self: center;
+  }
 
   &__btn {
     display: flex;
     justify-content: center;
+    align-self: center;
     align-items: center;
     background-color: $color-primary;
     color: #fff;
