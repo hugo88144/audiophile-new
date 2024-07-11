@@ -3,6 +3,10 @@ import { createContext, useContext, useEffect, useState } from "react";
 // Create a Context for the data
 const DataContext = createContext();
 
+// The URL for your Supabase Storage JSON file
+const DATA_URL = "https://hugo8814.github.io/host-api-audiophile/data.json";
+
+// eslint-disable-next-line react/prop-types
 export function DataProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,19 +14,15 @@ export function DataProvider({ children }) {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const productEndpoints = [0, 1, 2, 3, 4, 5];
       try {
-        const responses = await Promise.all(
-          productEndpoints.map((id) =>
-            fetch(`http://localhost:8000/${id}`).then((response) => {
-              if (!response.ok) {
-                throw new Error(`Failed to fetch product ${id}`);
-              }
-              return response.json();
-            })
-          )
-        );
-        setProducts(responses);
+        // Fetch the data.json file from Supabase Storage
+        const response = await fetch(DATA_URL);
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        // Parse the JSON data
+        const data = await response.json();
+        setProducts(data);
       } catch (error) {
         setError(error);
       } finally {
