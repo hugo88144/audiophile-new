@@ -17,14 +17,13 @@
   }
 
   @include respond-to(tablet-medium) {
+    padding: 0 4rem;
+    justify-content: start;
+    gap: 6rem;
     .gone {
       display: none;
       justify-content: space-between;
     }
-
-    padding: 0 4rem;
-    justify-content: start;
-    gap: 6rem;
   }
 
   &-link {

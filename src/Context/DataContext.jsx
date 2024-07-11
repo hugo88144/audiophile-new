@@ -41,4 +41,5 @@ export function DataProvider({ children }) {
 }
 
 // Custom hook to use the DataContext
+// eslint-disable-next-line react-refresh/only-export-components
 export const useData = () => useContext(DataContext);
