@@ -86,7 +86,7 @@ $breakpoint-desktop-large: 1600px;
 @import "./features";
 @import "./gallery";
 @import "./addToCart";
-@import "./cart";
+
 @import "./summary";
 @import "./goBack";
 @import "./cheakOut";
@@ -129,4 +129,139 @@ html {
   @include respond-to(mobile-medium) {
     font-size: 40%;
   }
+}
+
+////////////////////////////////
+///
+///
+.overlay {
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(115, 113, 113, 0.4);
+
+  /* Light gray with some transparency */
+  z-index: 100; /* Ensure it is on top of other elements */
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  position: absolute;
+  background-color: $color-white;
+  top: 10rem;
+  right: 22%;
+  width: 38rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  z-index: 200;
+
+  @include respond-to(mobile-medium) {
+    width: 35vh;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    &-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    &-btn {
+      border: none;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: #8d8d8d;
+      background-color: $color-white;
+      text-decoration: underline;
+    }
+  }
+  &__content {
+    width: 100%;
+
+    &-box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    &-img {
+      width: 6.4rem;
+      height: 6.4rem;
+      margin-right: 2rem;
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      width: 80%;
+    }
+    &-title {
+      font-size: 1.7rem;
+      font-weight: 600;
+
+      width: 100%;
+    }
+    &-price {
+      color: #8d8d8d;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+  }
+  &__Total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #8d8d8d;
+
+    &-title {
+      font-size: 1.6rem;
+      font-weight: 500;
+    }
+    &-price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+  &__btn {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $color-white;
+    background-color: $color-primary;
+    border: none;
+    width: 100%;
+
+    height: 5rem;
+    text-transform: uppercase;
+  }
+}
+.basket-box {
+  position: relative;
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: $color-primary;
+  color: $color-white;
+  font-size: 1.3rem;
+  font-weight: 700;
+  position: absolute;
+  top: -1.5rem;
+  right: 0.9rem;
 }
