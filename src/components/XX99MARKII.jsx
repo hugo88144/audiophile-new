@@ -45,7 +45,7 @@ function XX99MARKII({ children }) {
       <div className="XX99MARKIICard__imgBox">
         <div
           className="XX99MARKIICard__imgBox-img XX99IIImg"
-          style={{ backgroundImage: `url(/src${imageUrl.replace(".", "")})` }}
+          style={{ backgroundImage: `url(imageUrl)` }}
         ></div>
       </div>
       <div className="content2">
