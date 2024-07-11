@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useData } from "../Context/DataContext";
 import sectionTwoImg from "../assets/home/desktop/image-speaker-zx9.png";
 import rings from "../assets/home/desktop/pattern-circles.svg";
@@ -31,13 +32,13 @@ function SectionTwo() {
           truly remarkable sound.
         </div>
 
-        <BtnSee className="sectionTwo__btn" />
+        <BtnSee className="sectionTwo__btn" link="/speaker/zx9-speaker" />
       </div>
 
       <div className="sectionTwo__box-2">
         <div className="sectionTwo__img-2"></div>
         <div className="sectionTwo__title-2">{products[4].name}</div>
-        <BtnSee className="sectionTwo__btn-2" />
+        <BtnSee className="sectionTwo__btn-2" link="/speaker/zx7-speaker" />
       </div>
 
       <div className="sectionTwo__box-3">
@@ -50,7 +51,10 @@ function SectionTwo() {
             <div className="sectionTwo__title-3">
               {products.length > 0 && removeMiddleWord(products[0].name)}
             </div>
-            <BtnSee className="sectionTwo__btn-2" />
+            <BtnSee
+              className="sectionTwo__btn-2 sectionTwo__btn-3"
+              link="/earphones/YX1-earphones"
+            />
           </div>
         </div>
       </div>
