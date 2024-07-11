@@ -9,9 +9,6 @@
   background-color: $color-light-gray;
   gap: 4rem;
   border-radius: 8px;
-  @include respond-to(tablet-small) {
-    // padding: 4rem;
-  }
 
   .checkout__box {
     display: flex;
@@ -201,6 +198,8 @@
 }
 
 .checkout__ShippingInfo-Container {
-  display: flex !important;
-  flex-direction: column;
+  @include respond-to(tablet-small) {
+    display: flex !important;
+    flex-direction: column;
+  }
 }

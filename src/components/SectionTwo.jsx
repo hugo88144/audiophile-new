@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useData } from "../Context/DataContext";
 import sectionTwoImg from "../assets/home/desktop/image-speaker-zx9.png";
 import rings from "../assets/home/desktop/pattern-circles.svg";

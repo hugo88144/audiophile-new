@@ -39,7 +39,6 @@ function XX99MARKII({ children }) {
   if (loading) return null;
   if (error) return null;
   if (!product) return null;
-  console.log(`Window width: ${window.innerWidth}`);
 
   return (
     <div className="XX99MARKIICard">
