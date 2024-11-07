@@ -1,7 +1,3 @@
-$desktop-img: "/assets/shared/desktop/image-best-gear.jpg";
-$tablet-img: "/assets/shared/tablet/image-best-gear.jpg";
-$mobile-img: "/assets/shared/mobile/image-best-gear.jpg";
-
 .productCard {
   display: flex;
   justify-content: center;
@@ -95,18 +91,18 @@ $mobile-img: "/assets/shared/mobile/image-best-gear.jpg";
       width: 100%;
       height: 100%;
 
-      background-image: url($desktop-img);
+      background-image: url("/assets/shared/desktop/image-best-gear.jpg");
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
 
       @include respond-to(tablet-small) {
-        background-image: url($tablet-img);
+        background-image: url("/assets/shared/tablet/image-best-gear.jpg");
         background-size: cover;
       }
 
       @include respond-to(mobile-large) {
-        background-image: url($mobile-img);
+        background-image: url("/assets/shared/mobile/image-best-gear.jpg");
       }
     }
   }

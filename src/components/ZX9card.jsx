@@ -1,4 +1,4 @@
-import ZX9cardIMG from "../assets/shared/desktop/image-zx9-speaker.jpg";
+import ZX9cardIMG from "/assets/shared/desktop/image-zx9-speaker.jpg";
 import BtnSee from "./BtnSee";
 
 function ZX9card() {

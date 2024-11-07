@@ -1,4 +1,4 @@
-import ZX7cardIMG from "../assets/shared/desktop/image-zx7-speaker.jpg";
+import ZX7cardIMG from "/assets/shared/desktop/image-zx7-speaker.jpg";
 import BtnSee from "./BtnSee";
 
 function ZX7card() {

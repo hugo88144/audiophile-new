@@ -44,7 +44,7 @@ function ZX9SPEAKER({ children }) {
       <div className="XX99MARKIICard__imgBox">
         <div
           className="XX99MARKIICard__imgBox-img"
-          style={{ backgroundImage: `url(/src${imageUrl.replace(".", "")})` }}
+          style={{ backgroundImage: `url(${imageUrl.replace(".", "")})` }}
         ></div>
       </div>
       <div className="content2">

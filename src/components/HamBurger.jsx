@@ -1,4 +1,4 @@
-import HamBurgerImg from "../assets/shared/tablet/icon-hamburger.svg";
+import HamBurgerImg from "/assets/shared/tablet/icon-hamburger.svg";
 
 // eslint-disable-next-line react/prop-types
 function HamBurger({ isActive, setIsActive }) {

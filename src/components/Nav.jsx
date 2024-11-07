@@ -1,4 +1,4 @@
-import logo from "../assets/shared/desktop/logo.svg";
+import logo from "/assets/shared/desktop/logo.svg";
 import { Link } from "react-router-dom";
 import Basket from "./Basket";
 import { useData } from "../Context/DataContext";

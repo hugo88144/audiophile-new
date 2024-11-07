@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import arrow from "../assets/shared/desktop/icon-arrow-right.svg";
+import arrow from "/assets/shared/desktop/icon-arrow-right.svg";
 import { useData } from "../Context/DataContext";
-import XX99IImg from "../assets/shared/desktop/image-category-thumbnail-headphones.png";
-import ZX9Img from "../assets/shared/desktop/image-category-thumbnail-speakers.png";
-import YX1Img from "../assets/shared/desktop/image-category-thumbnail-earphones.png";
+import XX99IImg from "/assets/shared/desktop/image-category-thumbnail-headphones.png";
+import ZX9Img from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
+import YX1Img from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
 
 function AudioProductsV3() {
   const { products } = useData();

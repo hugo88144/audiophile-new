@@ -1,4 +1,4 @@
-import XX59IMG from "../assets/shared/desktop/image-xx59-headphones.jpg";
+import XX59IMG from "/assets/shared/desktop/image-xx59-headphones.jpg";
 import BtnSee from "./BtnSee";
 
 function XX59card() {

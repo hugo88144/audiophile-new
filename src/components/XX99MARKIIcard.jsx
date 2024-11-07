@@ -1,4 +1,4 @@
-import XX99IIIMG from "../assets/shared/desktop/image-xx99-mark-two-headphones.jpg";
+import XX99IIIMG from "/assets/shared/desktop/image-xx99-mark-two-headphones.jpg";
 import BtnSee from "./BtnSee";
 
 function XX99MARKIIcard() {

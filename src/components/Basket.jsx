@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import cart from "../assets/shared/desktop/icon-cart.svg";
+import cart from "/assets/shared/desktop/icon-cart.svg";
 import Cart from "./Cart";
 import { useCart } from "../Context/CartContext";
 
