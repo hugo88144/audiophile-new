@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../Context/CartContext";
-import iconOrderConfirmation from "../assets/checkout/icon-order-confirmation.svg";
+import iconOrderConfirmation from "/assets/checkout/icon-order-confirmation.svg";
 import { useState } from "react";
 
 function Confirmation() {

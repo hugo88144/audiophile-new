@@ -17,9 +17,9 @@ function AudioProductsV2({ index = 0 }) {
 
     const newImageUrls = data.others.map((product) => {
       const { image } = product;
-      if (windowWidth < 400) return `/src${image.mobile.replace(".", "")}`;
-      if (windowWidth < 768) return `/src${image.tablet.replace(".", "")}`;
-      return `/src${image.desktop.replace(".", "")}`;
+      if (windowWidth < 400) return `${image.mobile.replace(".", "")}`;
+      if (windowWidth < 768) return `${image.tablet.replace(".", "")}`;
+      return `${image.desktop.replace(".", "")}`;
     });
 
     setImageUrls(newImageUrls);

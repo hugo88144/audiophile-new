@@ -57,14 +57,14 @@ function Gallery({ index = 0 }) {
         <div
           className="imgContainer__imgBox-img"
           style={{
-            backgroundImage: `url(/src${imageUrls.first?.replace(".", "")})`,
+            backgroundImage: `url(${imageUrls.first?.replace(".", "")})`,
           }}
         ></div>
         {/* Responsive image for the second image */}
         <div
           className="imgContainer__imgBox-img"
           style={{
-            backgroundImage: `url(/src${imageUrls.second?.replace(".", "")})`,
+            backgroundImage: `url(${imageUrls.second?.replace(".", "")})`,
           }}
         ></div>
       </div>
@@ -73,7 +73,7 @@ function Gallery({ index = 0 }) {
         <div
           className="imgContainer__imgBigBox-img"
           style={{
-            backgroundImage: `url(/src${imageUrls.third?.replace(".", "")})`,
+            backgroundImage: `url(${imageUrls.third?.replace(".", "")})`,
           }}
         ></div>
       </div>

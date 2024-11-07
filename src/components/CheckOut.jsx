@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CartSummery from "./CartSummery";
 import GoBack from "./GoBack";
-import iconCash from "../assets/checkout/icon-cash-on-delivery.svg";
+import iconCash from "/assets/checkout/icon-cash-on-delivery.svg";
 import Confirmation from "./Confirmation";
 
 function CheckOut() {

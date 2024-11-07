@@ -4,12 +4,12 @@ import { useCart } from "../Context/CartContext"; // Import useCart hook to acce
 import BtnCounter from "./BtnCounter"; // Import BtnCounter component for managing quantity changes
 
 // Importing product images
-import XX99II from "../assets/cart/image-xx99-mark-two-headphones.jpg";
-import XX99I from "../assets/cart/image-xx99-mark-one-headphones.jpg";
-import XX59 from "../assets/cart/image-xx59-headphones.jpg";
-import ZX9 from "../assets/cart/image-zx9-speaker.jpg";
-import ZX7 from "../assets/cart/image-zx7-speaker.jpg";
-import YX1 from "../assets/cart/image-yx1-earphones.jpg";
+import XX99II from "/assets/cart/image-xx99-mark-two-headphones.jpg";
+import XX99I from "/assets/cart/image-xx99-mark-one-headphones.jpg";
+import XX59 from "/assets/cart/image-xx59-headphones.jpg";
+import ZX9 from "/assets/cart/image-zx9-speaker.jpg";
+import ZX7 from "/assets/cart/image-zx7-speaker.jpg";
+import YX1 from "/assets/cart/image-yx1-earphones.jpg";
 
 // Mapping product names to their corresponding image URLs
 const imageMap = {
