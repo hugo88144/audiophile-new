@@ -1,4 +1,4 @@
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
@@ -14,7 +14,7 @@ import Gallery from "../components/Gallery";
 function XX99I() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <GoBack />
       <XX99MARKI>
         <AddToCart price="1,750" productName={"XX99 Mark I"} />

@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
@@ -17,7 +17,7 @@ import Gallery from "../components/Gallery.jsx";
 function XX99II() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <GoBack />
       <XX99MARKII>
         <AddToCart price="2,999" productName={"XX99 Mark II"} />

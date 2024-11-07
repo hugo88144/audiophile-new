@@ -1,4 +1,4 @@
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 
@@ -9,7 +9,7 @@ import ZX7SPEAKER from "../components/ZX7SPEAKER";
 function Speakers() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <Header text="SPEAKERS" />
       <ZX9SPEAKER />
       <ZX7SPEAKER />

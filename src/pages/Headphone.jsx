@@ -1,4 +1,4 @@
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 import Header from "../components/Header";
 import XX99MARKII from "../components/XX99MARKII";
@@ -9,7 +9,7 @@ import AudioProducts from "../components/AuidoProducts";
 function Headphone() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <Header text="HEADPHONES" />
 
       <XX99MARKII />

@@ -1,11 +1,11 @@
 import CheckOut from "../components/CheckOut";
 
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 
 function CheckOutPage() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
 
       <CheckOut />
     </div>

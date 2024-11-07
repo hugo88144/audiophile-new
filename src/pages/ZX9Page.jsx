@@ -1,4 +1,4 @@
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
@@ -13,7 +13,7 @@ import GoBack from "../components/GoBack.jsx";
 function ZX9Page() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <GoBack />
       <ZX9SPEAKER>
         <AddToCart price="4,500" productName={"ZX9 Speaker"} />

@@ -1,4 +1,4 @@
-import NavBar from "../components/Nav";
+import Nav from "../components/Nav";
 import ProductCard from "../components/ProductCard";
 
 import AudioProducts from "../components/AuidoProducts";
@@ -14,7 +14,7 @@ import Gallery from "../components/Gallery";
 function XX59Page() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <GoBack />
 
       <XX59>

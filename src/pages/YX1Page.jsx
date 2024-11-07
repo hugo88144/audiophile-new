@@ -1,4 +1,4 @@
-import NavBar from "../components/Nav.jsx";
+import Nav from "../components/Nav.jsx";
 import ProductCard from "../components/ProductCard.jsx";
 
 import AudioProducts from "../components/AuidoProducts.jsx";
@@ -14,7 +14,7 @@ import Gallery from "../components/Gallery.jsx";
 function YX1Page() {
   return (
     <div className="box">
-      <NavBar />
+      <Nav />
       <GoBack />
       <YX1>
         <AddToCart price="599" productName={"YX1 Earphones"} />
