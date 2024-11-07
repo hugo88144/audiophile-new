@@ -1,6 +1,6 @@
 import { useData } from "../Context/DataContext";
-import sectionTwoImg from "../assets/home/desktop/image-speaker-zx9.png";
-import rings from "../assets/home/desktop/pattern-circles.svg";
+const sectionTwoImg = "src/assets/home/desktop/image-speaker-zx9.png";
+const rings = "src/assets/home/desktop/pattern-circles.svg";
 
 import BtnSee from "./BtnSee";
 
