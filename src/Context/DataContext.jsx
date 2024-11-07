@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 const DataContext = createContext();
 
 // The URL for your Supabase Storage JSON file
-const DATA_URL = "https://hugo8814.github.io/host-api-audiophile/data.json";
+const DATA_URL = "https://hugo88144.github.io/audiophile-json/data.json";
 
 // eslint-disable-next-line react/prop-types
 export function DataProvider({ children }) {
